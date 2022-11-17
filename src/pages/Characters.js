@@ -1,18 +1,30 @@
-import { useState, useEffect } from "react";
+//import React
+import React, { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+//import packages
 import axios from "axios";
+//import files
+import searchIcon from "../assets/images/searchIcon.svg";
+//
+const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
+//
 const Characters = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [characterName, setCharacterName] = useState("");
+  // const [characterId, setCharacterId] = useState("");
+  // const navigate = useNavigate();
+  //
 
-  // console.log(process.env.REACT_APP_ELLIOT_MARVELS_APIKEY); // OK
+  //
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-marvel.herokuapp.com/characters"
+          `http://localhost:4000/characters?apiKey=${REACT_APP_ELLIOT_APIKEY}&name=${characterName}`
         );
-        setData(response.data.results);
+        setData(response.data);
         setIsLoading(false);
         console.log(response.data);
       } catch (error) {
@@ -20,24 +32,38 @@ const Characters = () => {
       }
     };
     fetchData();
-  }, [page]);
+  }, [page, characterName]);
 
   return isLoading ? (
-    <span className="loading" style={{ marginBottom: "430px" }}>
-      Loading...
-    </span>
+    <span className="loading">Loading...</span>
   ) : (
     <div className="characters-main-container">
-      <div className="characters-title-page">Page Characters</div>
+      <div className="title-page">Page Characters</div>
+      <div className="searchBar">
+        <div className="search-image">
+          <img className="searchIcon" src={searchIcon} alt="icon_searchbar" />
+        </div>
+        <div className="searchInput">
+          <input
+            type="text"
+            placeholder="Rechercher un personnage"
+            value={characterName}
+            onChange={(event) => setCharacterName(event.target.value)}
+          />
+        </div>
+      </div>
       <div className="characters-all-cards">
-        {data.slice(0, 99).map((character, index) => {
+        {data.results.map((character, index) => {
+          const id = character._id;
           const imageCharacter =
             character.thumbnail.path + "." + character.thumbnail.extension;
-          // console.log(imageCharacter);
+          // console.log(character._id); // affiche l'id de chaque personnage
+
           return (
             !imageCharacter.includes("image_not_available") &&
             character.thumbnail.extension === "jpg" && (
-              <div key={index} className="characters-containerForEachCharacter">
+              <div key={id} className="characters-containerForEachCharacter">
+                {/* <Link to={`/character/${id}`}> */}
                 <div className="characters-card-top">
                   <div className="container-imageCharacter">
                     <img
@@ -47,13 +73,16 @@ const Characters = () => {
                     />
                   </div>
                 </div>
+
                 <div className="characters-card-bottom">
                   <div className="characters-card-bottom-animation"></div>
                   <div className="container-nameCharacter">
                     <p className="nameCharacter visible">{character.name}</p>
                   </div>
                   <div className="container-descriptionCharacter">
-                    <p className="showCard">DEVOILER LA CARTE</p>
+                    {/* <Link to={`/character/${id}`}>
+                      <p className="showCard">DEVOILER LA CARTE</p>
+                    </Link> */}
                     <p className="descriptionCharacter hidden">
                       {character.description
                         ? character.description
@@ -61,6 +90,7 @@ const Characters = () => {
                     </p>
                   </div>
                 </div>
+                {/* </Link> */}
               </div>
             )
           );

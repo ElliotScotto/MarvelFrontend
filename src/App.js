@@ -7,11 +7,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import packages
 // import axios from "axios";
 //
-// import des pages
+// import Pages
 import Characters from "./pages/Characters";
+import CharacterId from "./pages/CharacterId";
 import Comics from "./pages/Comics";
 import Header from "./components/Header";
 import Favoris from "./pages/Favoris";
+//
+// import Components
+
 //
 
 //
@@ -28,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" />
         <Route path="/characters" element={<Characters />} />
-        {/* <Route path="/character/:characterId" element={<CharactersId />} /> */}
+        <Route path="/character/:characterId" element={<CharacterId />} />
         <Route path="/comics" element={<Comics />} />
         <Route path="/favoris" element={<Favoris />} />
       </Routes>

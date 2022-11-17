@@ -11,6 +11,7 @@ body {
 /* HEADER */
 .header-desktopNav {
   /* background-color: #202020; */
+  margin-bottom: 30px;
 }
 .header-desktopNav-top {
   display: flex;
@@ -39,16 +40,44 @@ body {
 .header-desktopNav-bottom-link {
   cursor: pointer;
 }
+/*
+/* SEARCH */
+.searchBar {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  gap: 10px;
+  align-items: center;
+}
+.searchIcon {
+  height: 20px;
+  object-fit: cover;
+}
+.searchBar input {
+  width: 600px;
+  font-size: 18px;
+  font-weight: 900;
+  color: black;
+  font-family: Marvel, sans-serif;
+  border: none;
+  border-bottom: solid 1px lightgray;
+}
+.searchBar input:focus {
+  outline: none;
+}
 
 /*
 /* CHARACTERS */
-.characters-title-page {
+.title-page {
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
-.characters-main-container {
-  width: 1250px;
+.characters-main-container,
+.characterId-all-comics {
+  width: 1100px;
   margin: 0 auto;
 }
 .characters-all-cards {
@@ -68,7 +97,7 @@ body {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 3px 1px 7px lightgrey;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .characters-card-top {
   width: 200px;
@@ -150,6 +179,7 @@ body {
 .hidden :hover {
   visibility: hidden;
 }
+
 /*
 /* PAGINATION */
 .pages {
@@ -157,4 +187,99 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+/*
+/*Character/:CharacterId*/
+.character-all-comics {
+  margin-top: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  border: solid 2px green;
+}
+.infos-character-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.comicsList {
+  display: flex;
+  font-weight: 900;
+}
+.comicsList li {
+  list-style: disc;
+}
+.nameCharacterId {
+  margin: 8px;
+  font-size: 22px;
+  color: black;
+}
+
+/*
+/* COMICS */
+.comics-main-container {
+  width: 1200px;
+  height: 5000px;
+  margin: 0 auto;
+  border: solid 1px green;
+}
+.characters-all-comics {
+  border: solid 1px red;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 800px;
+}
+.comics-containerForEachComic {
+  width: 250px;
+  height: 180px;
+  border: solid 1px lightgrey;
+  border-radius: 2px;
+
+  display: flex;
+}
+.comics-left-block {
+  border: solid 1px yellow;
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+}
+.imageComic {
+  height: auto;
+  /* object-fit: cover; */
+}
+.comics-right-block {
+  /* border: solid 1px pink; */
+  width: 200px;
+}
+.comics-right-block-animation {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  width: 125px;
+  height: 180px;
+  background-color: #0000ff;
+  transition: width 0.3s, background-color 2s, transform 2s;
+}
+.comics-right-block-animation:hover {
+  background-color: #ffcccc;
+  width: 200px;
+  height: 180px;
+}
+.to-right :after {
+  right: 0;
+  height: 100%;
+}
+.to-right :hover :after {
+  right: 100%;
+  height: 100%;
+}
+.container-nameComic {
+}
+.container-descriptionComic {
+}
+.descriptionComic {
 }
