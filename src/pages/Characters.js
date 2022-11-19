@@ -6,6 +6,9 @@ import axios from "axios";
 //import files
 import searchIcon from "../assets/images/searchIcon.svg";
 //
+//import components
+import Loading from "../components/Loading";
+//
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 //
 const Characters = () => {
@@ -35,10 +38,10 @@ const Characters = () => {
   }, [page, characterName]);
 
   return isLoading ? (
-    <span className="loading">Loading...</span>
+    <Loading />
   ) : (
     <div className="characters-main-container">
-      <div className="title-page">Page Characters</div>
+      <div className="title-page">PERSONNAGES</div>
       <div className="searchBar">
         <div className="search-image">
           <img className="searchIcon" src={searchIcon} alt="icon_searchbar" />
@@ -64,8 +67,8 @@ const Characters = () => {
             character.thumbnail.extension === "jpg" && (
               <div key={id} className="characters-containerForEachCharacter">
                 {/* <Link to={`/character/${id}`}> */}
-                <div className="characters-card-top">
-                  <div className="container-imageCharacter">
+                <div className="characters-card-top ">
+                  <div className="container-imageCharacter shine">
                     <img
                       className="imageCharacter"
                       src={imageCharacter}
@@ -83,7 +86,7 @@ const Characters = () => {
                     {/* <Link to={`/character/${id}`}>
                       <p className="showCard">DEVOILER LA CARTE</p>
                     </Link> */}
-                    <p className="descriptionCharacter hidden">
+                    <p className="descriptionCharacter hiddenCard">
                       {character.description
                         ? character.description
                         : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, maxime!"}

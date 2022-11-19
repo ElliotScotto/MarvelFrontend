@@ -5,6 +5,9 @@ import axios from "axios";
 //import files
 import searchIcon from "../assets/images/searchIcon.svg";
 //
+//import components
+import Loading from "../components/Loading";
+//
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 //
 const Comics = () => {
@@ -33,10 +36,10 @@ const Comics = () => {
   }, [page, comicTitle]);
 
   return isLoading ? (
-    <span className="loading">Loading...</span>
+    <Loading />
   ) : (
     <div className="comics-main-container">
-      <div className="title-page">Page Comics</div>
+      <div className="title-page">COMICS</div>
       <div className="searchBar">
         <div className="search-image">
           <img className="searchIcon" src={searchIcon} alt="icon_searchbar" />
@@ -57,60 +60,38 @@ const Comics = () => {
             comic.thumbnail.path + "." + comic.thumbnail.extension;
           // console.log(character._id); // affiche l'id de chaque personnage
 
-          return (
-            <div className="comics-containerForEachComic">
-              <div className="comics-left-block">
-                bloc de gauche
-                {/* <img
-                  className="imageComic"
-                  src={imageComic}
-                  alt="jacket_comics"
-                /> */}
-              </div>{" "}
-              <div className="comics-right-block">
-                <div className="comics-right-block-animation">
-                  bloc de droite
+          return isLoading ? (
+            // <span className="loading">Loading...</span>
+            <Loading />
+          ) : (
+            !imageComic.includes("image_not_available") &&
+              comic.thumbnail.path !== "jpg" && (
+                <div className="comics-containerForEachComic">
+                  <div className="comics-left-block">
+                    {/* bloc de gauche */}
+                    <img
+                      className="imageComic"
+                      src={imageComic}
+                      alt="jacket_comics"
+                    />
+                  </div>{" "}
+                  <div className="comics-right-block">
+                    {/* bloc de droite */}
+                    <div className="comics-right-block-animation">
+                      <div className="comics-info-title">
+                        <p className="comics-title">{comic.title}</p>
+                      </div>
+                      <div className="comics-info-details">
+                        <p className="comics-details">
+                          {comic.description
+                            ? comic.description
+                            : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quod perspiciatis quae velit corporis vitae ipsa nemo, voluptate odio architecto."}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              {/* <div className="container-nameComic">
-                <p>{comic.title}</p>
-              </div>
-              <div className="container-descriptionComic">
-                <p className="descriptionComic">{comic.description}</p>
-              </div> */}
-            </div>
-            // !imageComic.includes("image_not_available") &&
-            // comic.thumbnail.path === "jpg" && (
-            //   <div key={index} className="characters-containerForEachCharacter">
-            //     {/* <Link to={`/character/${id}`}> */}
-            //     <div className="comics-card-top">
-            //       <div className="container-imageCharacter">
-            //         <img
-            //           className="imageCharacter"
-            //           src={imageComic}
-            //           alt="image_character"
-            //         />
-            //       </div>
-            //     </div>
-
-            //     <div className="comics-card-bottom">
-            //       <div className="comics-card-bottom-animation"></div>
-            //       <div className="container-nameCharacter">
-            //         <p className="nameComic visible">{comic.title}</p>
-            //       </div>
-            //       <div className="container-descriptionComic">
-            //         {/* <Link to={`/character/${id}`}>
-            //           <p className="showCard">DEVOILER LA CARTE</p>
-            //         </Link> */}
-            //         <p className="descriptionComic hidden">
-            //           {comic.description
-            //             ? comic.description
-            //             : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, maxime!"}
-            //         </p>
-            //       </div>
-            //     </div>
-            //   </div>
-            // )
+              )
           );
         })}
       </div>

@@ -1,30 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+/* GENERAL */
 body {
   margin: 0 auto;
   font-family: Marvel, sans-serif;
   font-weight: 700;
   font-size: 18px;
+  /* background-color: #202020; */
 }
-
+.Btn-Link {
+  text-decoration: none;
+  color: black;
+}
 /*
 /* HEADER */
 .header-desktopNav {
   /* background-color: #202020; */
   margin-bottom: 30px;
+  border: 1px solid gold;
+}
+.header-container-user {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  display: flex;
+  gap: 15px;
+}
+.header-join,
+.header-signin,
+.header-split {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .header-join,
+  .header-signin,
+  .header-split {
+    display: none;
+  }
 }
 .header-desktopNav-top {
   display: flex;
   justify-content: center;
   border-bottom: solid 1px black;
-}
-.header-link {
-  text-decoration: none;
-  color: black;
+  border: 1px solid green;
 }
 .header-desktopNav-top img {
   height: 50px;
   width: auto;
+  border: 1px solid pink;
 }
 .header-desktopNav-bottom {
   display: flex;
@@ -83,10 +107,11 @@ body {
 .characters-all-cards {
   display: flex;
   justify-content: center;
-  border: solid 2px green;
+  /* border: solid 2px green; */
   flex-wrap: wrap;
   gap: 15px;
   padding: 5px;
+  box-sizing: border-box;
 }
 .characters-containerForEachCharacter {
   width: 200px;
@@ -106,7 +131,11 @@ body {
   border-bottom: 3px solid #e6232a;
   display: flex;
 }
-
+.characters-card-top:hover {
+  /* zoom sur l'image de la carte */
+  /* transform: scale(1.08); */
+  opacity: 90%;
+}
 .container-imageCharacter {
   /* border: solid 1px blue; */
   display: flex;
@@ -120,7 +149,7 @@ body {
   width: 100%;
   position: relative;
   background-color: #151515;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .characters-card-bottom-animation {
@@ -176,7 +205,7 @@ body {
   font-size: 16px;
   color: white;
 }
-.hidden :hover {
+.hiddenCard :hover {
   visibility: hidden;
 }
 
@@ -220,66 +249,105 @@ body {
 /*
 /* COMICS */
 .comics-main-container {
-  width: 1200px;
+  width: 1100px;
   height: 5000px;
   margin: 0 auto;
-  border: solid 1px green;
+  /* border: solid 1px green; */
+  height: fit-content;
+  padding-bottom: 20px;
 }
 .characters-all-comics {
-  border: solid 1px red;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* border: solid 1px red; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  height: 800px;
+  gap: 20px;
+  height: fit-content;
 }
 .comics-containerForEachComic {
   width: 250px;
-  height: 180px;
-  border: solid 1px lightgrey;
+  height: 250px;
+  /* border: solid 1px lightgrey; */
   border-radius: 2px;
-
   display: flex;
+  position: relative;
 }
 .comics-left-block {
-  border: solid 1px yellow;
-  width: 200px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  cursor: pointer;
+  /* border: solid 1px yellow; */
+  width: fit-content;
+  /* cursor: pointer; */
 }
 .imageComic {
-  height: auto;
-  /* object-fit: cover; */
+  height: 100%;
+  width: 100%;
+  margin-left: 43px;
+
+  object-fit: contain;
 }
 .comics-right-block {
-  /* border: solid 1px pink; */
-  width: 200px;
+  background-color: #202020;
+  height: 250px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
 }
 .comics-right-block-animation {
-  border-style: solid;
-  border-width: 1px;
-  display: block;
-  width: 125px;
-  height: 180px;
-  background-color: #0000ff;
-  transition: width 0.3s, background-color 2s, transform 2s;
+  box-sizing: border-box;
+  border: solid 1px red;
+  display: flex;
+  flex-direction: column;
+  width: 65px;
+  height: 100%;
+  background-color: #202020;
+  transition: width 0.3s, background-color 1s, transform 1s;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .comics-right-block-animation:hover {
-  background-color: #ffcccc;
-  width: 200px;
-  height: 180px;
+  /* background-color: #202020; */
+  width: 250px;
+  height: 100%;
 }
-.to-right :after {
+.hiddenDetails {
+  visibility: hidden;
+}
+.hiddenDetails :hover {
+  visibility: visible;
+}
+.comics-info-title {
+  background-color: #e6232a;
+  height: 20px;
+  width: auto;
+  display: flex;
+  padding: 5px;
+}
+.comics-title {
+  color: white;
+  font-size: 18px;
+  overflow: hidden;
+}
+.comics-info-details {
+  padding: 5px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: calc(95%);
+}
+.comics-details {
+  color: white;
+  font-size: 16px;
+  line-height: 18px;
+}
+/* transform: rotate(90deg); */
+
+/* .to-right :after {
   right: 0;
   height: 100%;
 }
 .to-right :hover :after {
   right: 100%;
   height: 100%;
-}
-.container-nameComic {
-}
-.container-descriptionComic {
-}
-.descriptionComic {
-}
+} */
