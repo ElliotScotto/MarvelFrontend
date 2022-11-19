@@ -1,22 +1,36 @@
 import { Link } from "react-router-dom";
 import logomarvel from "../assets/images/logomarvel.png";
-const Header = () => {
+const Header = ({ handleToken, userToken }) => {
   return (
     <div className="header-desktopNav">
       <div className="header-container-user">
-        <Link className="Btn-Link" to="/signin">
-          <div className="header-signin">SIGN IN</div>
-        </Link>
-        <div className="header-split">|</div>
-        <Link className="Btn-Link" to="/join">
-          <div className="header-join">JOIN</div>
+        {!userToken ? (
+          <>
+            <Link className="Btn-Link" to="/signin">
+              <div className="header-signin">SIGN IN</div>
+            </Link>
+            <div className="header-split">|</div>
+            <Link className="Btn-Link" to="/join">
+              <div className="header-join">JOIN</div>
+            </Link>
+          </>
+        ) : (
+          <div
+            className="header-join Btn-Link"
+            onClick={() => {
+              handleToken();
+            }}
+          >
+            QUIT
+          </div>
+        )}
+      </div>
+
+      <div className="header-desktopNav-top">
+        <Link to="/">
+          <img src={logomarvel} alt="logo_marvel" />
         </Link>
       </div>
-      <Link to="/">
-        <div className="header-desktopNav-top">
-          <img src={logomarvel} alt="logo_marvel" />
-        </div>
-      </Link>
 
       <div className="header-desktopNav-bottom">
         <ul className="header-desktopNav-bottom-nav">

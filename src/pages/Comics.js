@@ -11,6 +11,7 @@ import Loading from "../components/Loading";
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 //
 const Comics = () => {
+  const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [comicTitle, setComicTitle] = useState("");
@@ -23,7 +24,7 @@ const Comics = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/comics?apiKey=${REACT_APP_ELLIOT_APIKEY}&title=${comicTitle}`
+          `${REACT_APP_BACKEND_ENDPOINT}/comics?apiKey=${REACT_APP_ELLIOT_APIKEY}&title=${comicTitle}`
         );
         setData(response.data);
         setIsLoading(false);
