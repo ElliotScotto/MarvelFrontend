@@ -32,7 +32,7 @@ const SignIn = ({ handleToken }) => {
           }
         );
         console.log(response.data);
-        setIsLoading(false);
+
         handleToken(response.data.token);
         if (response.data.token) {
           toast.success(`Bravo ${username} ! vous êtes inscrit.`, {
