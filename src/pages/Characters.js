@@ -1,10 +1,12 @@
 //import React
 import React, { useState, useEffect } from "react";
+import { HashLink } from "react-router-hash-link";
 // import { useNavigate } from "react-router-dom";
 //import packages
 import axios from "axios";
 //import files
 import searchIcon from "../assets/images/searchIcon.svg";
+import arrowUp from "../assets/images/circle-arrow-up-solid.svg";
 //
 //import components
 import Loading from "../components/Loading";
@@ -26,7 +28,7 @@ const Characters = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${REACT_APP_BACKEND_ENDPOINT}/characters?apiKey=${REACT_APP_ELLIOT_APIKEY}&name=${characterName}`
+          `${REACT_APP_BACKEND_ENDPOINT}/characters?apiKey=${REACT_APP_ELLIOT_APIKEY}&name=${characterName}&page=${page}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -100,10 +102,35 @@ const Characters = () => {
           );
         })}
       </div>
-      <div className="pages">
-        <button onClick={() => setPage(page - 1)}>Page précédente</button>
-        <button onClick={() => setPage(page + 1)}>Page suivante</button>
-      </div>
+      <footer>
+        <div className="arrow-style">
+          <HashLink to="#top">
+            <img
+              className="icon-arrow-up"
+              src={arrowUp}
+              alt="icon-top-page"
+              style={{
+                marginLeft: "10%",
+                textDecoration: "none",
+                color: "black",
+              }}
+            />
+          </HashLink>
+        </div>
+        <div className="pages">
+          <button
+            className="Btn-page"
+            onClick={() => {
+              page > 1 && setPage(page - 1);
+            }}
+          >
+            PRECEDENT
+          </button>
+          <button className="Btn-page" onClick={() => setPage(page + 1)}>
+            SUIVANT
+          </button>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -12,7 +12,7 @@ import Cookies from "js-cookie";
 import Characters from "./pages/Characters";
 import CharacterId from "./pages/CharacterId";
 import Comics from "./pages/Comics";
-import Favoris from "./pages/Favoris";
+import Favorites from "./pages/Favorites";
 import ComicsByCharacterId from "./pages/ComicsByCharacterId";
 import SignIn from "./pages/SignIn";
 import Join from "./pages/Join";
@@ -24,6 +24,8 @@ import { Toaster } from "react-hot-toast";
 
 //
 function App() {
+  const [favComics, setFavComics] = useState([]);
+  const [favCharacters, setFavCharacters] = useState([]);
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
   const handleToken = (token) => {
     if (token) {
@@ -41,13 +43,25 @@ function App() {
         <Header handleToken={handleToken} userToken={userToken} />
         <Routes>
           <Route path="/" />
-
-          <Route path="/comics" element={<Comics />} />
+          <Route
+            path="/comics"
+            element={
+              <Comics favComics={favComics} setFavComics={setFavComics} />
+            }
+          />
           <Route
             path="/comics/:characterId"
             element={<ComicsByCharacterId />}
           />
-          <Route path="/characters" element={<Characters />} />
+          <Route
+            path="/characters"
+            element={
+              <Characters
+                favCharacters={favCharacters}
+                setFavCharacters={setFavCharacters}
+              />
+            }
+          />
           <Route path="/character/:characterId" element={<CharacterId />} />
           <Route
             path="/signin"
@@ -55,8 +69,8 @@ function App() {
           />
           <Route path="/join" element={<Join handleToken={handleToken} />} />
           <Route
-            path="/favoris"
-            element={<Favoris handleToken={handleToken} />}
+            path="/favorites"
+            element={<Favorites handleToken={handleToken} />}
           />
         </Routes>
       </Router>

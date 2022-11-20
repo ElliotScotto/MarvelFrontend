@@ -47,7 +47,7 @@ const Header = ({ handleToken, userToken }) => {
           <Link to="/comics" className="Btn-Link">
             <li className="header-desktopNav-bottom-link">COMICS</li>
           </Link>
-          <Link to="/favoris" className="Btn-Link">
+          <Link to="/favorites" className="Btn-Link">
             <li className="header-desktopNav-bottom-link">FAVORIS</li>
           </Link>
         </ul>
