@@ -9,9 +9,9 @@ import searchIcon from "../assets/images/searchIcon.svg";
 import Loading from "../components/Loading";
 //
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
+const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
 const Comics = () => {
-  const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [comicTitle, setComicTitle] = useState("");
@@ -67,7 +67,7 @@ const Comics = () => {
           ) : (
             !imageComic.includes("image_not_available") &&
               comic.thumbnail.path !== "jpg" && (
-                <div className="comics-containerForEachComic">
+                <div key={index} className="comics-containerForEachComic">
                   <div className="comics-left-block">
                     {/* bloc de gauche */}
                     <img

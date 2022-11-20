@@ -1,30 +1,50 @@
+import "../assets/style-user.css";
 // import react
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+//Import Components
+import Loading from "../components/Loading";
 //import package
 import axios from "axios";
+import toast from "react-hot-toast";
+//
+const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
+//
 const Join = ({ handleToken }) => {
-  const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
+  const [isLoading, setIsLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   //
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND_ENDPOINT}/join`,
-        {
-          email: email,
-          password: password,
-        }
-      );
+    if (password.length >= 8) {
+      try {
+        const response = await axios.post(
+          `${REACT_APP_BACKEND_ENDPOINT}/join`,
+          {
+            email: email,
+            password: password,
+          }
+        );
 
-      console.log(response.data);
-      handleToken(response.data.token);
-      navigate("/characters");
-    } catch (error) {
-      console.log(error);
+        console.log(response.data);
+        handleToken(response.data.token);
+        if (response.data.token) {
+          toast.success(`Bon retour parmi nous !`, {
+            duration: 3000,
+          });
+          navigate("/characters");
+        } else {
+          toast.error("Le MCU ne vous a pas reconnu...", {
+            duration: 5000,
+          });
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      toast.error("Votre mot de passe doit contenir 8 caractères minimum.");
     }
   };
   //

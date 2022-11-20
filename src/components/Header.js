@@ -1,5 +1,9 @@
+import "../assets/style-header.css";
+import logout from "../assets/images/logout.svg";
+//
 import { Link } from "react-router-dom";
 import logomarvel from "../assets/images/logomarvel.png";
+//
 const Header = ({ handleToken, userToken }) => {
   return (
     <div className="header-desktopNav">
@@ -16,12 +20,15 @@ const Header = ({ handleToken, userToken }) => {
           </>
         ) : (
           <div
-            className="header-join Btn-Link"
+            className="logout-style"
             onClick={() => {
               handleToken();
             }}
           >
-            QUIT
+            <div>
+              <img className="logout-img" src={logout} alt="logout-icon" />
+            </div>
+            <div className="header-quit Btn-Link">QUIT</div>
           </div>
         )}
       </div>

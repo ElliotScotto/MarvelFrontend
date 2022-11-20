@@ -4,7 +4,7 @@ body {
   margin: 0 auto;
   font-family: Marvel, sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   /* background-color: #202020; */
 }
 .Btn-Link {
@@ -12,59 +12,7 @@ body {
   color: black;
   cursor: pointer;
 }
-/*
-/* HEADER */
-.header-desktopNav {
-  /* background-color: #202020; */
-  margin-bottom: 30px;
-  border: 1px solid gold;
-}
-.header-container-user {
-  /* border: 1px solid red; */
-  position: absolute;
-  top: 20px;
-  left: 10%;
-  display: flex;
-  gap: 15px;
-}
-.header-join,
-.header-signin,
-.header-split {
-  font-size: 16px;
-}
 
-@media (max-width: 768px) {
-  .header-join,
-  .header-signin,
-  .header-split {
-    display: none;
-  }
-}
-.header-desktopNav-top {
-  display: flex;
-  justify-content: center;
-  border-bottom: solid 1px black;
-  border: 1px solid green;
-}
-.header-desktopNav-top img {
-  height: 50px;
-  width: auto;
-  border: 1px solid pink;
-}
-.header-desktopNav-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: solid 1px black;
-  height: 40px;
-}
-.header-desktopNav-bottom-nav {
-  display: flex;
-  gap: 50px;
-}
-.header-desktopNav-bottom-link {
-  cursor: pointer;
-}
 /*
 /* SEARCH */
 .searchBar {
@@ -203,7 +151,7 @@ body {
 }
 .descriptionCharacter {
   margin: 10px 8px;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
 }
 .hiddenCard :hover {
@@ -341,81 +289,4 @@ body {
   color: white;
   font-size: 16px;
   line-height: 18px;
-}
-/* transform: rotate(90deg); */
-
-/* .to-right :after {
-  right: 0;
-  height: 100%;
-}
-.to-right :hover :after {
-  right: 100%;
-  height: 100%;
-} */
-
-/*
-/* SIGN IN */
-.signin-container,
-.join-container {
-  box-sizing: border-box;
-  border: solid 1px black;
-  margin: 0 auto;
-  width: 50vw;
-  max-width: 500px;
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-.signin-title,
-.join-title {
-  border: solid 1px black;
-  font-size: 28px;
-  margin-bottom: 40px;
-}
-.signin-form,
-.join-form {
-  border: solid 1px black;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.signin-form input,
-.join-form input {
-  font-family: Marvel, sans-serif;
-  font-size: 20px;
-  font-weight: 900;
-  height: 30px;
-  border: none;
-}
-.signin-form input:focus,
-.join-form input:focus {
-  outline: none;
-}
-.signin-form .userInput,
-.join-form .userInput {
-  color: #e6232a;
-  border-bottom: solid 1px #e6232a;
-}
-.signin-form input::placeholder,
-.join-form input::placeholder {
-  font-family: Marvel, sans-serif;
-  font-size: 18px;
-  color: lightgrey;
-}
-
-.Btn-submit {
-  margin-top: 30px;
-  background-color: #e6232a;
-  color: white;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.alreadysigned {
-  display: flex;
-  justify-content: center;
-  color: #e6232a;
-}
-.alreadysigned p:hover {
-  border-bottom: solid 1px #e6232a;
 }
