@@ -1,23 +1,29 @@
+import "../assets/style-favorites.css";
 //import React
 import React, { useState, useEffect } from "react";
-
+// import { useNavigate } from "react-router-dom";
 //import packages
 import axios from "axios";
 //import components
+import NotSigned from "../components/NotSigned";
 import Loading from "../components/Loading";
+//import files
+
+// import { Link } from "react-router-dom";
 //
-const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
-const Favorites = ({ handleToken }) => {
-  const [data, setData] = useState([]);
+const Favorites = ({ userToken }) => {
+  const [, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  // const navigate = useNavigate();
   //
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          `${REACT_APP_BACKEND_ENDPOINT}/favorites${REACT_APP_ELLIOT_APIKEY}`
+          `${REACT_APP_BACKEND_ENDPOINT}/favorites`
         );
         setData(response.data);
         setIsLoading(false);
@@ -28,7 +34,15 @@ const Favorites = ({ handleToken }) => {
     };
     fetchData();
   }, []);
-
-  return isLoading ? <Loading /> : <div>Bienvenue sur la Page Favoris.</div>;
+  return isLoading ? (
+    <Loading />
+  ) : !userToken ? (
+    <NotSigned />
+  ) : (
+    <div className="container-fav">
+      <div className="title-page">" Bienvenue dans vos Favoris ! "</div>
+      <div className="inProgress">PAGE EN COURS DE CREATION...</div>
+    </div>
+  );
 };
 export default Favorites;

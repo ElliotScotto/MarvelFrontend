@@ -1,0 +1,60 @@
+.fav-container-noToken {
+  width: 525px;
+  box-sizing: border-box;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border: dashed 5px #e6232a;
+  background-color: #202020;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  margin: 0 auto;
+}
+.fav-blockLeft {
+  /* border: solid 2px gold; */
+}
+.fav-blockRight {
+  /* border: solid 2px green; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 5px;
+  margin-right: 10px;
+}
+.fav_shame-user {
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  color: white;
+  font-style: oblique;
+}
+.joinOrSign {
+  color: white;
+}
+.fav-notSigned {
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  font-weight: 900;
+}
+.fav-notSigned p:hover {
+  cursor: pointer;
+  color: #e6232a;
+}
+.fav-notSigned p {
+  color: white;
+  text-align: center;
+}
+
+.sadDeadpool-style {
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 50vh;
+}

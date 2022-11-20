@@ -1,26 +1,34 @@
+import "../assets/footer.css";
+//
 //import React
 import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //import packages
 import axios from "axios";
 //import files
 import searchIcon from "../assets/images/searchIcon.svg";
 import arrowUp from "../assets/images/circle-arrow-up-solid.svg";
+import arrowLeft from "../assets/images/arrow-left.svg";
+import arrowRight from "../assets/images/arrow-right.svg";
+import chevronDown from "../assets/images/chevron-down.svg";
+import userPlus from "../assets/images/user-plus.svg";
 //
 //import components
 import Loading from "../components/Loading";
+// import { Link } from "react-router-dom";
 //
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
-const Characters = () => {
+const Characters = ({ addFav }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [characterName, setCharacterName] = useState("");
   // const [characterId, setCharacterId] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+
   //
 
   //
@@ -81,14 +89,38 @@ const Characters = () => {
                 </div>
 
                 <div className="characters-card-bottom">
+                  {/* <Link to={`/character/${id}`}> */}
+                  <div className="showCard">
+                    {/* <p className="addCard visible">AJOUTER LA CARTE</p> */}
+                    {/* <img
+                      className="icon-user-plus"
+                      src={userPlus}
+                      alt="user-fav-icon-plus"
+                    /> */}
+                  </div>
+                  {/* </Link> */}
                   <div className="characters-card-bottom-animation"></div>
                   <div className="container-nameCharacter">
-                    <p className="nameCharacter visible">{character.name}</p>
+                    <p className="nameCharacter visible">
+                      {character.name}
+                      {/* <p className="addCard">Add</p> */}
+
+                      <img
+                        className="icon-user-plus"
+                        src={userPlus}
+                        alt="user-fav-icon-plus"
+                        onClick={() => {
+                          navigate("/favorites");
+                        }}
+                      />
+                    </p>
+                    <img
+                      className="icon-arrow-right"
+                      src={chevronDown}
+                      alt="icon-chevron-down"
+                    />
                   </div>
                   <div className="container-descriptionCharacter">
-                    {/* <Link to={`/character/${id}`}>
-                      <p className="showCard">DEVOILER LA CARTE</p>
-                    </Link> */}
                     <p className="descriptionCharacter hiddenCard">
                       {character.description
                         ? character.description
@@ -103,7 +135,7 @@ const Characters = () => {
         })}
       </div>
       <footer>
-        <div className="arrow-style">
+        <div className="arrowUp-style">
           <HashLink to="#top">
             <img
               className="icon-arrow-up"
@@ -118,17 +150,25 @@ const Characters = () => {
           </HashLink>
         </div>
         <div className="pages">
-          <button
+          <div
             className="Btn-page"
             onClick={() => {
               page > 1 && setPage(page - 1);
             }}
           >
-            PRECEDENT
-          </button>
-          <button className="Btn-page" onClick={() => setPage(page + 1)}>
-            SUIVANT
-          </button>
+            <img
+              className="icon-arrow-left"
+              src={arrowLeft}
+              alt="icon-arrow-left"
+            />
+          </div>
+          <div className="Btn-page" onClick={() => setPage(page + 1)}>
+            <img
+              className="icon-arrow-right"
+              src={arrowRight}
+              alt="icon-arrow-right"
+            />
+          </div>
         </div>
       </footer>
     </div>

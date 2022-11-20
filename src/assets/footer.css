@@ -1,0 +1,45 @@
+/*
+/* FOOTER */
+
+footer {
+  border-top: #e6232a solid 1px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.arrowUp-style {
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.pages {
+  position: absolute;
+  top: 10px;
+}
+.Btn-page {
+  border: solid 1px #e6232a;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.Btn-page:hover,
+.arrowUp-style:hover {
+  opacity: 70%;
+}
+.pages {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.icon-arrow-up {
+  height: 25px;
+  width: 25px;
+}
+.icon-arrow-left,
+.icon-arrow-right {
+  height: 13px;
+  width: 13px;
+  padding: 5px;
+}

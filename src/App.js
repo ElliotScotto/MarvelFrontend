@@ -21,7 +21,6 @@ import Join from "./pages/Join";
 import Header from "./components/Header";
 import { Toaster } from "react-hot-toast";
 //
-
 //
 function App() {
   const [favComics, setFavComics] = useState([]);
@@ -36,13 +35,24 @@ function App() {
       setUserToken(null);
     }
   };
+  //
+  //
+
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} />
       <Router>
         <Header handleToken={handleToken} userToken={userToken} />
         <Routes>
-          <Route path="/" />
+          <Route
+            path="/"
+            element={
+              <Characters
+                favCharacters={favCharacters}
+                setFavCharacters={setFavCharacters}
+              />
+            }
+          />
           <Route
             path="/comics"
             element={
@@ -70,7 +80,7 @@ function App() {
           <Route path="/join" element={<Join handleToken={handleToken} />} />
           <Route
             path="/favorites"
-            element={<Favorites handleToken={handleToken} />}
+            element={<Favorites userToken={userToken} />}
           />
         </Routes>
       </Router>

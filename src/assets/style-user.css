@@ -3,7 +3,7 @@
 .signin-container,
 .join-container {
   box-sizing: border-box;
-  border: solid 1px black;
+  /* border: solid 1px black; */
   margin: 15vh auto;
   width: 50vw;
   max-width: 500px;
@@ -23,7 +23,7 @@
 }
 .signin-form,
 .join-form {
-  border: solid 1px black;
+  /* border: solid 1px black; */
   display: flex;
   flex-direction: column;
   gap: 20px;

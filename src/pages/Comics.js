@@ -1,3 +1,5 @@
+import "../assets/footer.css";
+//
 import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 // import { useNavigate } from "react-router-dom";
@@ -6,6 +8,8 @@ import axios from "axios";
 //import files
 import searchIcon from "../assets/images/searchIcon.svg";
 import arrowUp from "../assets/images/circle-arrow-up-solid.svg";
+import arrowLeft from "../assets/images/arrow-left.svg";
+import arrowRight from "../assets/images/arrow-right.svg";
 //
 //import components
 import Loading from "../components/Loading";
@@ -99,7 +103,7 @@ const Comics = () => {
         })}
       </div>
       <footer>
-        <div className="arrow-style">
+        <div className="arrowUp-style">
           <HashLink to="#top">
             <img
               className="icon-arrow-up"
@@ -114,17 +118,25 @@ const Comics = () => {
           </HashLink>
         </div>
         <div className="pages">
-          <button
+          <div
             className="Btn-page"
             onClick={() => {
               page > 1 && setPage(page - 1);
             }}
           >
-            PRECEDENT
-          </button>
-          <button className="Btn-page" onClick={() => setPage(page + 1)}>
-            SUIVANT
-          </button>
+            <img
+              className="icon-arrow-left"
+              src={arrowLeft}
+              alt="icon-arrow-left"
+            />
+          </div>
+          <div className="Btn-page" onClick={() => setPage(page + 1)}>
+            <img
+              className="icon-arrow-right"
+              src={arrowRight}
+              alt="icon-arrow-right"
+            />
+          </div>
         </div>
       </footer>
     </div>

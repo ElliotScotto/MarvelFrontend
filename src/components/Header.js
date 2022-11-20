@@ -35,7 +35,7 @@ const Header = ({ handleToken, userToken }) => {
 
       <div className="header-desktopNav-top">
         <Link to="/">
-          <img src={logomarvel} alt="logo_marvel" />
+          <img className="logo-marvel" src={logomarvel} alt="logo_marvel" />
         </Link>
       </div>
 
