@@ -3,7 +3,7 @@ import "../assets/style-user.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //Import Components
-import Loading from "../components/Loading";
+
 //import package
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -11,7 +11,6 @@ import toast from "react-hot-toast";
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
 const Join = ({ handleToken }) => {
-  const [isLoading, setIsLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();

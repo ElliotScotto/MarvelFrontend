@@ -3,7 +3,7 @@ import "../assets/style-user.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 //Import Components
-import Loading from "../components/Loading";
+
 //Import React
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,7 +11,6 @@ import { Link, useNavigate } from "react-router-dom";
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
 const SignIn = ({ handleToken }) => {
-  const [isLoading, setIsLoading] = useState(true);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
