@@ -1,4 +1,3 @@
-import "../assets/style-user.css";
 // import react
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +34,7 @@ const Join = ({ handleToken }) => {
           });
           navigate("/characters");
         } else {
-          toast.error("Le MCU ne vous a pas reconnu...", {
+          toast.error("Etes-vous bien inscrit ?", {
             duration: 5000,
           });
         }
@@ -71,12 +70,14 @@ const Join = ({ handleToken }) => {
             setPassword(event.target.value);
           }}
         />
-        <input
-          className="Btn-submit"
-          type="submit"
-          value="Se Connecter"
-          onClick={handleSubmit}
-        />
+        <div className="BtnStyle">
+          <input
+            className="Btn-submit"
+            type="submit"
+            value="Se Connecter"
+            onClick={handleSubmit}
+          />
+        </div>
       </form>
     </div>
   );

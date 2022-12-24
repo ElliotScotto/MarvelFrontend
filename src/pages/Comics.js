@@ -17,7 +17,7 @@ import Loading from "../components/Loading";
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
-const Comics = () => {
+const Comics = ({ addFav }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [comicTitle, setComicTitle] = useState("");
@@ -46,7 +46,7 @@ const Comics = () => {
     <Loading />
   ) : (
     <div className="comics-main-container">
-      <div className="title-page">COMICS</div>
+      {/* <div className="title-page">COMICS</div> */}
       <div className="searchBar">
         <div className="search-image">
           <img className="searchIcon" src={searchIcon} alt="icon_searchbar" />

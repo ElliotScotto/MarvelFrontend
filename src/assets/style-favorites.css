@@ -3,10 +3,31 @@
   height: 3000px;
   margin: 0 auto;
   border: solid 1px green;
-}
-.inProgress {
-  margin: 20vh auto;
-  width: 100px;
   display: flex;
-  justify-content: center;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.FavDisplay {
+  display: flex;
+
+  /* flex-wrap: wrap; */
+}
+.BordBlack {
+  border: solid 1px black;
+}
+.BordRed {
+  border: solid 1px red;
+}
+.BordGold {
+  border: solid 1px gold;
+}
+.BordGreen {
+  border: solid 1px green;
+}
+.BordBlue {
+  border: solid 1px blue;
+}
+.click {
+  cursor: pointer;
 }

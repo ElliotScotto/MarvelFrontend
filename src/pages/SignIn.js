@@ -1,4 +1,3 @@
-import "../assets/style-user.css";
 // Import packages
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -40,7 +39,7 @@ const SignIn = ({ handleToken }) => {
           });
           navigate("/characters");
         } else {
-          toast.error("Les Avengers vous bloquent l'accès.", {
+          toast.error("L'accès est bloqué.", {
             duration: 5000,
           });
         }
@@ -97,15 +96,17 @@ const SignIn = ({ handleToken }) => {
               setConfirmPassword(event.target.value);
             }}
           />
-          <input
-            className="Btn-submit"
-            type="submit"
-            value="S'inscrire"
-            onClick={handleSubmit}
-          />
+          <div className="BtnStyle">
+            <input
+              className="Btn-submit"
+              type="submit"
+              value="S'inscrire"
+              onClick={handleSubmit}
+            />
+          </div>
           <Link className="Btn-Link" to="join">
             <div className="alreadysigned">
-              <p>Déjà inscrit au MCU ? Connectes-toi ici</p>
+              <p>Déjà inscrit ? Connectes-toi ici</p>
             </div>
           </Link>
         </form>

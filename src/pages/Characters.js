@@ -1,9 +1,7 @@
-import "../assets/footer.css";
 //
 //import React
 import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
-import { useNavigate } from "react-router-dom";
 //import packages
 import axios from "axios";
 //import files
@@ -11,12 +9,10 @@ import searchIcon from "../assets/images/searchIcon.svg";
 import arrowUp from "../assets/images/circle-arrow-up-solid.svg";
 import arrowLeft from "../assets/images/arrow-left.svg";
 import arrowRight from "../assets/images/arrow-right.svg";
-import chevronDown from "../assets/images/chevron-down.svg";
-import userPlus from "../assets/images/user-plus.svg";
 //
 //import components
 import Loading from "../components/Loading";
-// import { Link } from "react-router-dom";
+import CharacterCard from "../components/CharacterCard.js";
 //
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
@@ -26,11 +22,6 @@ const Characters = ({ addFav }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [characterName, setCharacterName] = useState("");
-  // const [characterId, setCharacterId] = useState("");
-  const navigate = useNavigate();
-
-  //
-
   //
   useEffect(() => {
     const fetchData = async () => {
@@ -52,7 +43,6 @@ const Characters = ({ addFav }) => {
     <Loading />
   ) : (
     <div className="characters-main-container">
-      <div className="title-page">PERSONNAGES</div>
       <div className="searchBar">
         <div className="search-image">
           <img className="searchIcon" src={searchIcon} alt="icon_searchbar" />
@@ -68,69 +58,17 @@ const Characters = ({ addFav }) => {
       </div>
       <div className="characters-all-cards">
         {data.results.map((character, index) => {
-          const id = character._id;
-          const imageCharacter =
-            character.thumbnail.path + "." + character.thumbnail.extension;
-          // console.log(character._id); // affiche l'id de chaque personnage
-
           return (
-            !imageCharacter.includes("image_not_available") &&
-            character.thumbnail.extension === "jpg" && (
-              <div key={id} className="characters-containerForEachCharacter">
-                {/* <Link to={`/character/${id}`}> */}
-                <div className="characters-card-top ">
-                  <div className="container-imageCharacter shine">
-                    <img
-                      className="imageCharacter"
-                      src={imageCharacter}
-                      alt="image_character"
-                    />
-                  </div>
-                </div>
-
-                <div className="characters-card-bottom">
-                  {/* <Link to={`/character/${id}`}> */}
-                  <div className="showCard">
-                    {/* <p className="addCard visible">AJOUTER LA CARTE</p> */}
-                    {/* <img
-                      className="icon-user-plus"
-                      src={userPlus}
-                      alt="user-fav-icon-plus"
-                    /> */}
-                  </div>
-                  {/* </Link> */}
-                  <div className="characters-card-bottom-animation"></div>
-                  <div className="container-nameCharacter">
-                    <p className="nameCharacter visible">
-                      {character.name}
-                      {/* <p className="addCard">Add</p> */}
-
-                      <img
-                        className="icon-user-plus"
-                        src={userPlus}
-                        alt="user-fav-icon-plus"
-                        onClick={() => {
-                          navigate("/favorites");
-                        }}
-                      />
-                    </p>
-                    <img
-                      className="icon-arrow-right"
-                      src={chevronDown}
-                      alt="icon-chevron-down"
-                    />
-                  </div>
-                  <div className="container-descriptionCharacter">
-                    <p className="descriptionCharacter hiddenCard">
-                      {character.description
-                        ? character.description
-                        : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, maxime!"}
-                    </p>
-                  </div>
-                </div>
-                {/* </Link> */}
-              </div>
-            )
+            <CharacterCard
+              key={index}
+              id={character._id}
+              cTPath={character.thumbnail.path}
+              cTExt={character.thumbnail.extension}
+              cName={character.name}
+              cDescrip={character.description}
+              character={character}
+              addFav={addFav}
+            />
           );
         })}
       </div>

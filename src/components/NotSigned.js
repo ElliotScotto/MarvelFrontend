@@ -20,7 +20,7 @@ const NotSigned = () => {
       <div className="fav-blockRight">
         <div className="fav_shame-user">
           <p>
-            " Quel dommage !<br /> Vous ne faîtes pas partie du MCU ! "
+            Quel dommage !<br /> Vous n'êtes pas encore inscrit.
           </p>
         </div>
 

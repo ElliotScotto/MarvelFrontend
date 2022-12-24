@@ -43,12 +43,13 @@
   justify-content: center;
   border-bottom: solid 1px #e6232a;
   /* border: 1px solid green; */
+  height: 50px;
 }
 .header-desktopNav-top img {
   width: auto;
 }
 .logo-marvel {
-  height: 50px;
+  height: 100%;
 }
 .header-desktopNav-bottom {
   display: flex;
@@ -69,19 +70,22 @@
   cursor: pointer;
   background-color: #e6232a;
 }
+.logout-style {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 .header-quit {
   background-color: #e6232a;
   color: white;
   padding: 5px;
   border-radius: 3px;
 }
-.logout-style {
+
+.logout-style img {
+  height: 26px;
+  width: auto;
+  object-fit: cover;
   display: flex;
   align-items: center;
-  gap: 1px;
-  cursor: pointer;
-}
-.logout-style img {
-  height: 20px;
-  width: 20px;
 }
