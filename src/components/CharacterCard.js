@@ -1,6 +1,10 @@
 import chevronDown from "../assets/images/chevron-down.svg";
 import userPlus from "../assets/images/user-plus.svg";
-
+import Cookies from "js-cookie";
+import toast from "react-hot-toast";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+//
 //
 export default function CharacterCard({
   id,
@@ -11,6 +15,9 @@ export default function CharacterCard({
   character,
   addFav,
 }) {
+  const navigate = useNavigate();
+  const userToken = Cookies.get("userToken");
+  //
   const imageCharacter = cTPath + "." + cTExt;
   return (
     <>
@@ -39,7 +46,15 @@ export default function CharacterCard({
                   src={userPlus}
                   alt="user-fav-icon-plus"
                   onClick={() => {
-                    addFav(id, character);
+                    // console.log("handleCookie() ====> ", handleCookie());
+                    // console.log("userToken ====> ", userToken);
+                    console.log("userToken ====> ", userToken);
+                    console.log(
+                      userToken
+                        ? "On peut ajouter en favoris"
+                        : navigate("/signin")
+                    );
+                    // addFav(id, character);
                   }}
                 />
               </p>

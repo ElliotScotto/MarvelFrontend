@@ -14,6 +14,7 @@ const SignIn = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
   //
   const handleSubmit = async (event) => {
@@ -35,11 +36,11 @@ const SignIn = ({ handleToken }) => {
         handleToken(response.data.token);
         if (response.data.token) {
           toast.success(`Bravo ${username} ! vous êtes inscrit.`, {
-            duration: 5000,
+            duration: 4000,
           });
           navigate("/characters");
         } else {
-          toast.error("L'accès est bloqué.", {
+          toast.error("L'accès est bloqué : ", response.data, {
             duration: 5000,
           });
         }
@@ -104,11 +105,16 @@ const SignIn = ({ handleToken }) => {
               onClick={handleSubmit}
             />
           </div>
-          <Link className="Btn-Link" to="join">
+          <div
+            className="Btn-Link"
+            onClick={() => {
+              navigate("/join");
+            }}
+          >
             <div className="alreadysigned">
               <p>Déjà inscrit ? Connectes-toi ici</p>
             </div>
-          </Link>
+          </div>
         </form>
       </div>
     </div>

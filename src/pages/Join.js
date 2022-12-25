@@ -30,7 +30,7 @@ const Join = ({ handleToken }) => {
         handleToken(response.data.token);
         if (response.data.token) {
           toast.success(`Bon retour parmi nous !`, {
-            duration: 3000,
+            duration: 4000,
           });
           navigate("/characters");
         } else {
