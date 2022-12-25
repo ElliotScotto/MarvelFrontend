@@ -1,8 +1,7 @@
 import chevronDown from "../assets/images/chevron-down.svg";
 import userPlus from "../assets/images/user-plus.svg";
+import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
 import Cookies from "js-cookie";
-import toast from "react-hot-toast";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //
 //
@@ -46,8 +45,6 @@ export default function CharacterCard({
                   src={userPlus}
                   alt="user-fav-icon-plus"
                   onClick={() => {
-                    // console.log("handleCookie() ====> ", handleCookie());
-                    // console.log("userToken ====> ", userToken);
                     console.log("userToken ====> ", userToken);
                     console.log(
                       userToken
@@ -58,6 +55,7 @@ export default function CharacterCard({
                   }}
                 />
               </p>
+
               <img
                 className="icon-arrow-right"
                 src={chevronDown}
@@ -70,6 +68,13 @@ export default function CharacterCard({
                   ? cDescrip
                   : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, maxime!"}
               </p>
+            </div>
+            <div className="whiteAngle">
+              <img
+                className="whiteAngle-icon"
+                src={whiteTriangle}
+                alt="white_angle"
+              />
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@
 .header-signin,
 .header-split,
 .header-quit {
-  font-size: 18px;
+  font-size: 16px;
 }
 .header-signin,
 .header-join,
@@ -65,6 +65,7 @@
   cursor: pointer;
   color: white;
   padding: 9px;
+  font-size: 16px;
 }
 .header-desktopNav-bottom-link:hover {
   cursor: pointer;
