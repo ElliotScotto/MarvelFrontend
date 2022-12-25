@@ -5,7 +5,6 @@ import { HashLink } from "react-router-hash-link";
 //import packages
 import axios from "axios";
 //import files
-import searchIcon from "../assets/images/searchIcon.svg";
 import arrowUp from "../assets/images/circle-arrow-up-solid.svg";
 import arrowLeft from "../assets/images/arrow-left.svg";
 import arrowRight from "../assets/images/arrow-right.svg";
@@ -13,6 +12,7 @@ import arrowRight from "../assets/images/arrow-right.svg";
 //import components
 import Loading from "../components/Loading";
 import CharacterCard from "../components/CharacterCard.js";
+import SearchCharacter from "../components/SearchCharacter.js";
 //
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
@@ -43,19 +43,10 @@ const Characters = ({ addFav }) => {
     <Loading />
   ) : (
     <>
-      <div className="searchBar ">
-        <div className="search-image">
-          <img className="searchIcon " src={searchIcon} alt="icon_searchbar" />
-        </div>
-        <div className="searchInput ">
-          <input
-            type="text"
-            placeholder="Rechercher un personnage"
-            value={characterName}
-            onChange={(event) => setCharacterName(event.target.value)}
-          />
-        </div>
-      </div>
+      <SearchCharacter
+        characterName={characterName}
+        setCharacterName={setCharacterName}
+      />
       <div className="characters-main-container">
         <div className="characters-all-cards">
           {data.results.map((character, index) => {
