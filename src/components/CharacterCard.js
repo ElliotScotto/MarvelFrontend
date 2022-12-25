@@ -45,13 +45,12 @@ export default function CharacterCard({
                   src={userPlus}
                   alt="user-fav-icon-plus"
                   onClick={() => {
-                    console.log("userToken ====> ", userToken);
-                    console.log(
-                      userToken
+                    <>
+                      {console.log("userToken ====> ", userToken)};
+                      {userToken
                         ? "On peut ajouter en favoris"
-                        : navigate("/signin")
-                    );
-                    // addFav(id, character);
+                        : navigate("/signin")}
+                    </>;
                   }}
                 />
               </p>

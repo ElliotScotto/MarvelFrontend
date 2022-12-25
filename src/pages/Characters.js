@@ -42,12 +42,12 @@ const Characters = ({ addFav }) => {
   return isLoading ? (
     <Loading />
   ) : (
-    <div className="characters-main-container">
-      <div className="searchBar">
+    <>
+      <div className="searchBar ">
         <div className="search-image">
-          <img className="searchIcon" src={searchIcon} alt="icon_searchbar" />
+          <img className="searchIcon " src={searchIcon} alt="icon_searchbar" />
         </div>
-        <div className="searchInput">
+        <div className="searchInput ">
           <input
             type="text"
             placeholder="Rechercher un personnage"
@@ -56,60 +56,62 @@ const Characters = ({ addFav }) => {
           />
         </div>
       </div>
-      <div className="characters-all-cards">
-        {data.results.map((character, index) => {
-          return (
-            <CharacterCard
-              key={index}
-              id={character._id}
-              cTPath={character.thumbnail.path}
-              cTExt={character.thumbnail.extension}
-              cName={character.name}
-              cDescrip={character.description}
-              character={character}
-              addFav={addFav}
-            />
-          );
-        })}
-      </div>
-      <footer>
-        <div className="arrowUp-style">
-          <HashLink to="#top">
-            <img
-              className="icon-arrow-up"
-              src={arrowUp}
-              alt="icon-top-page"
-              style={{
-                marginLeft: "10%",
-                textDecoration: "none",
-                color: "black",
+      <div className="characters-main-container">
+        <div className="characters-all-cards">
+          {data.results.map((character, index) => {
+            return (
+              <CharacterCard
+                key={index}
+                id={character._id}
+                cTPath={character.thumbnail.path}
+                cTExt={character.thumbnail.extension}
+                cName={character.name}
+                cDescrip={character.description}
+                character={character}
+                addFav={addFav}
+              />
+            );
+          })}
+        </div>
+        <footer>
+          <div className="arrowUp-style">
+            <HashLink to="#top">
+              <img
+                className="icon-arrow-up"
+                src={arrowUp}
+                alt="icon-top-page"
+                style={{
+                  marginLeft: "10%",
+                  textDecoration: "none",
+                  color: "black",
+                }}
+              />
+            </HashLink>
+          </div>
+          <div className="pages">
+            <div
+              className="Btn-page"
+              onClick={() => {
+                page > 1 && setPage(page - 1);
               }}
-            />
-          </HashLink>
-        </div>
-        <div className="pages">
-          <div
-            className="Btn-page"
-            onClick={() => {
-              page > 1 && setPage(page - 1);
-            }}
-          >
-            <img
-              className="icon-arrow-left"
-              src={arrowLeft}
-              alt="icon-arrow-left"
-            />
+            >
+              <img
+                className="icon-arrow-left"
+                src={arrowLeft}
+                alt="icon-arrow-left"
+              />
+            </div>
+            <div className="Btn-page" onClick={() => setPage(page + 1)}>
+              <img
+                className="icon-arrow-right"
+                src={arrowRight}
+                alt="icon-arrow-right"
+              />
+            </div>
           </div>
-          <div className="Btn-page" onClick={() => setPage(page + 1)}>
-            <img
-              className="icon-arrow-right"
-              src={arrowRight}
-              alt="icon-arrow-right"
-            />
-          </div>
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
+    </>
   );
 };
 export default Characters;

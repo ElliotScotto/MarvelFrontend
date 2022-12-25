@@ -22,19 +22,30 @@ body {
 /*
 /* SEARCH */
 .searchBar {
+  margin: 0 auto 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   height: 40px;
   display: flex;
-  justify-content: center;
-  margin: 20px auto;
   gap: 10px;
+  justify-content: center;
   align-items: center;
+}
+.search-image {
+  width: fit-content;
 }
 .searchIcon {
   height: 20px;
-  object-fit: cover;
+  width: auto;
 }
-.searchBar input {
-  width: 600px;
+.searchInput {
+  min-width: 250px;
+  max-width: 600px;
+  width: 100%;
+}
+.searchInput input {
+  box-sizing: border-box;
+  width: 100%;
   font-size: 18px;
   font-weight: 900;
   color: black;
@@ -42,6 +53,7 @@ body {
   border: none;
   border-bottom: solid 1px lightgray;
 }
+
 .searchBar input:focus {
   outline: none;
 }
@@ -62,7 +74,6 @@ body {
 .characters-all-cards {
   display: flex;
   justify-content: center;
-  /* border: solid 2px green; */
   flex-wrap: wrap;
   gap: 15px;
   padding: 5px;
@@ -93,7 +104,6 @@ body {
   opacity: 90%;
 }
 .container-imageCharacter {
-  /* border: solid 1px blue; */
   display: flex;
 }
 .imageCharacter {
@@ -152,7 +162,6 @@ body {
   color: white;
 }
 .container-descriptionCharacter {
-  /* border: solid 1px gold; */
   height: 48px;
   overflow: hidden;
   text-overflow: ellipsis;
