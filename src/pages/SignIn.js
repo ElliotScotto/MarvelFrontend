@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 //Import React
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
@@ -14,7 +14,6 @@ const SignIn = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
   //
   const handleSubmit = async (event) => {

@@ -13,6 +13,7 @@ import arrowRight from "../assets/images/arrow-right.svg";
 //import components
 import Loading from "../components/Loading";
 import SearchComics from "../components/SearchComics";
+import Results from "../components/Results";
 //
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
@@ -48,6 +49,7 @@ const Comics = ({ addFav }) => {
     <>
       <SearchComics comicTitle={comicTitle} setComicTitle={setComicTitle} />
       <div className="comics-main-container">
+        <Results totalCount={data.count} />
         <div className="characters-all-comics">
           {data.results.map((comic, index) => {
             // const id = comic._id;

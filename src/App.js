@@ -52,7 +52,7 @@ function App() {
         favCopy[0].push(id);
 
         toast.success("Favoris ajouté !", {
-          duration: 5000,
+          duration: 4000,
         });
       } else {
         toast.error("Déjà en favoris !", {
@@ -62,14 +62,13 @@ function App() {
     } else if (favCopy[1].indexOf(id) === -1) {
       favCopy[1].push(id);
       toast.success("Favoris ajouté !", {
-        duration: 5000,
+        duration: 4000,
       });
     } else {
       toast.error("Déjà en favoris !", {
         duration: 5000,
       });
     }
-
     setFav(favCopy);
     Cookies.set("fav", JSON.stringify(favCopy));
   };

@@ -8,11 +8,11 @@ import axios from "axios";
 import arrowUp from "../assets/images/circle-arrow-up-solid.svg";
 import arrowLeft from "../assets/images/arrow-left.svg";
 import arrowRight from "../assets/images/arrow-right.svg";
-//
 //import components
 import Loading from "../components/Loading";
 import CharacterCard from "../components/CharacterCard.js";
 import SearchCharacter from "../components/SearchCharacter.js";
+import Results from "../components/Results.js";
 //
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
@@ -47,12 +47,15 @@ const Characters = ({ addFav }) => {
         characterName={characterName}
         setCharacterName={setCharacterName}
       />
+
       <div className="characters-main-container">
+        <Results totalCount={data.count} />
         <div className="characters-all-cards">
           {data.results.map((character, index) => {
             return (
               <CharacterCard
                 key={index}
+                data={character}
                 id={character._id}
                 cTPath={character.thumbnail.path}
                 cTExt={character.thumbnail.extension}

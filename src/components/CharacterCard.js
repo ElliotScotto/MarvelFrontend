@@ -11,7 +11,7 @@ export default function CharacterCard({
   cTExt,
   cName,
   cDescrip,
-  character,
+  data,
   addFav,
 }) {
   const navigate = useNavigate();
@@ -46,9 +46,10 @@ export default function CharacterCard({
                   alt="user-fav-icon-plus"
                   onClick={() => {
                     <>
-                      {console.log("userToken ====> ", userToken)};
+                      {/* {console.log("userToken ====> ", userToken)}; */}
+
                       {userToken
-                        ? "On peut ajouter en favoris"
+                        ? addFav(data._id, "character")
                         : navigate("/signin")}
                     </>;
                   }}

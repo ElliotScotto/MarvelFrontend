@@ -57,6 +57,43 @@ body {
 .searchBar input:focus {
   outline: none;
 }
+/*
+/* COUNT */
+.charactersCount {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  gap: 5px;
+  margin: 0 20px;
+  font-size: 16px;
+}
+
+.charactersResults {
+  overflow: hidden;
+}
+
+.slash1 {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  bottom: 13px;
+  right: 14px;
+  clip: rect(5px, auto, 15px, auto);
+}
+.slash2 {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 13px;
+  left: 5px;
+  clip: rect(5px, auto, 15px, auto);
+}
+.iconSlash {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
 /*
 /* CHARACTERS */
