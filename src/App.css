@@ -18,7 +18,24 @@ body {
 .absolute {
   position: absolute;
 }
-
+.BordBlack {
+  border: solid 1px black;
+}
+.BordRed {
+  border: solid 1px red;
+}
+.BordGold {
+  border: solid 1px gold;
+}
+.BordGreen {
+  border: solid 1px green;
+}
+.BordBlue {
+  border: solid 1px blue;
+}
+.click {
+  cursor: pointer;
+}
 /*
 /* SEARCH */
 .searchBar {

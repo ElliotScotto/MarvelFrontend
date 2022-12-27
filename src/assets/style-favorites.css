@@ -2,32 +2,49 @@
   width: 1100px;
   height: 3000px;
   margin: 0 auto;
-  border: solid 1px green;
+  border: solid 1px red;
   display: flex;
   box-sizing: border-box;
   flex-wrap: wrap;
 }
+.containerFavCharacters,
+.containerFavComics {
+  width: 50%;
+}
 
 .FavDisplay {
   display: flex;
-
-  /* flex-wrap: wrap; */
+  flex-direction: column;
+  gap: 10px;
 }
-.BordBlack {
-  border: solid 1px black;
+.favTitle {
+  margin-bottom: 20px;
+  font-weight: bold;
 }
-.BordRed {
-  border: solid 1px red;
+.favCharacter,
+.favComics {
+  border: solid 1px #202020;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
 }
-.BordGold {
-  border: solid 1px gold;
+.infoFav {
+  flex: 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.BordGreen {
-  border: solid 1px green;
+.removeFav {
+  flex: 0.05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.BordBlue {
-  border: solid 1px blue;
+.removeFavIcon {
+  height: 20px;
+  width: 20px;
 }
-.click {
-  cursor: pointer;
+.removeFavIcon:hover {
+  transform: scale(1.05);
 }

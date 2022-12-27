@@ -45,13 +45,11 @@ export default function CharacterCard({
                   src={userPlus}
                   alt="user-fav-icon-plus"
                   onClick={() => {
-                    <>
-                      {/* {console.log("userToken ====> ", userToken)}; */}
-
-                      {userToken
+                    {
+                      userToken
                         ? addFav(data._id, "character")
-                        : navigate("/signin")}
-                    </>;
+                        : navigate("/signin");
+                    }
                   }}
                 />
               </p>

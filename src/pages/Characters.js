@@ -13,6 +13,7 @@ import Loading from "../components/Loading";
 import CharacterCard from "../components/CharacterCard.js";
 import SearchCharacter from "../components/SearchCharacter.js";
 import Results from "../components/Results.js";
+import Footer from "../components/Footer";
 //
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
@@ -67,43 +68,7 @@ const Characters = ({ addFav }) => {
             );
           })}
         </div>
-        <footer>
-          <div className="arrowUp-style">
-            <HashLink to="#top">
-              <img
-                className="icon-arrow-up"
-                src={arrowUp}
-                alt="icon-top-page"
-                style={{
-                  marginLeft: "10%",
-                  textDecoration: "none",
-                  color: "black",
-                }}
-              />
-            </HashLink>
-          </div>
-          <div className="pages">
-            <div
-              className="Btn-page"
-              onClick={() => {
-                page > 1 && setPage(page - 1);
-              }}
-            >
-              <img
-                className="icon-arrow-left"
-                src={arrowLeft}
-                alt="icon-arrow-left"
-              />
-            </div>
-            <div className="Btn-page" onClick={() => setPage(page + 1)}>
-              <img
-                className="icon-arrow-right"
-                src={arrowRight}
-                alt="icon-arrow-right"
-              />
-            </div>
-          </div>
-        </footer>
+        <Footer page={page} setPage={setPage} />
       </div>
     </>
   );
