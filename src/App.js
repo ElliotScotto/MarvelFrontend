@@ -2,6 +2,7 @@ import "./App.css";
 import "./assets/style-user.css";
 import "./assets/style-favorites.css";
 import "./assets/footer.css";
+import "./assets/footer.css";
 //
 //import fonctions React
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

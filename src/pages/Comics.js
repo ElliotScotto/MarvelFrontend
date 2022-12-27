@@ -1,12 +1,6 @@
-import "../assets/footer.css";
-//
 import React, { useState, useEffect } from "react";
 //import packages
 import axios from "axios";
-//import files
-import arrowUp from "../assets/images/circle-arrow-up-solid.svg";
-import arrowLeft from "../assets/images/arrow-left.svg";
-import arrowRight from "../assets/images/arrow-right.svg";
 //
 //import components
 import Loading from "../components/Loading";
@@ -22,9 +16,6 @@ const Comics = ({ addFav }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [comicTitle, setComicTitle] = useState("");
   const [page, setPage] = useState(1);
-  // const navigate = useNavigate();
-  //
-
   //
   useEffect(() => {
     const fetchData = async () => {
