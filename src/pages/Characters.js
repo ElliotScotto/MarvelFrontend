@@ -15,6 +15,7 @@ const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 const Characters = ({
   addFav,
   addFavCharacter,
+  addFavDescri,
   handleHeader,
   setColorItemChar,
   setBorderItemChar,
@@ -24,6 +25,7 @@ const Characters = ({
   setBorderItemFav,
   setColorItemSignIn,
   setColorItemJoin,
+  setFavCharacterDescri,
 }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -87,6 +89,8 @@ const Characters = ({
                 cDescrip={character.description}
                 addFav={addFav}
                 addFavCharacter={addFavCharacter}
+                addFavDescri={addFavDescri}
+                setFavCharacterDescri={setFavCharacterDescri}
               />
             );
           })}

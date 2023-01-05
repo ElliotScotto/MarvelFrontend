@@ -29,7 +29,6 @@ import Header from "./components/Header";
 import { Toaster } from "react-hot-toast";
 //
 function App() {
-  //const [pageFocused, setPageFocused] = useState(""); //Link to Pages
   const [colorItemChar, setColorItemChar] = useState("grey");
   const [borderItemChar, setBorderItemChar] = useState("#202020");
   const [colorItemComics, setColorItemComics] = useState("grey");
@@ -40,11 +39,16 @@ function App() {
   const [colorItemJoin, setColorItemJoin] = useState("white");
   const [favComics, setFavComics] = useState([]);
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  //Fav States
   let cookie = Cookies.get("fav");
   const [fav, setFav] = useState((cookie && JSON.parse(cookie)) || [[], []]);
   let cookie2 = Cookies.get("favChar");
   const [favCharacter, setFavCharacter] = useState(
     (cookie2 && JSON.parse(cookie2)) || [[], []]
+  );
+  let cookie3 = Cookies.get("favCharDescri");
+  const [favCharacterDescri, setFavCharacterDescri] = useState(
+    (cookie3 && JSON.parse(cookie3)) || [[], []]
   );
   //
   //
@@ -65,13 +69,21 @@ function App() {
   //
   // FAVORIS
   //Ajouter un Favoris
+  //Nom de personnages
   const addFavCharacter = (name) => {
     let favCharacterCopy = [...favCharacter];
     favCharacterCopy[0].push(name);
     setFavCharacter(favCharacterCopy);
     Cookies.set("favChar", JSON.stringify(favCharacterCopy));
   };
-  //
+  //Description du personnage
+  const addFavDescri = (description) => {
+    let favCharacterDescriCopy = [...favCharacterDescri];
+    favCharacterDescriCopy[0].push(description);
+    setFavCharacterDescri(favCharacterDescriCopy);
+    Cookies.set("favCharDescri", JSON.stringify(favCharacterDescriCopy));
+  };
+  //Id du personnage
   const addFav = (id, from) => {
     let favCopy = [...fav];
     if (from === "character") {
@@ -87,7 +99,7 @@ function App() {
       }
     } else if (favCopy[1].indexOf(id) === -1) {
       favCopy[1].push(id);
-      toast.success("Favoris ajouté !", {
+      toast.success("Personnage ajouté !", {
         duration: 2000,
       });
     } else {
@@ -100,6 +112,7 @@ function App() {
   };
   //
   //Retirer un Favoris
+  //Retirer le nom du personnage
   const RemoveFavCharacter = (name) => {
     const favChar = Cookies.get("favChar");
     const tabFavChar = favChar && JSON.parse(favChar);
@@ -120,6 +133,28 @@ function App() {
     setFavCharacter(newFavChar);
     Cookies.set("favChar", JSON.stringify(newFavChar));
   };
+  //Retirer la description du personnage
+  const RemoveFavCharacterDescri = (description) => {
+    const favCharDescri = Cookies.get("favCharDescri");
+    const tabFavCharDescri = favCharDescri && JSON.parse(favCharDescri);
+    let newFavCharDescri = [[], []];
+    for (let i = 0; i < tabFavCharDescri.length; i++) {
+      for (let j = 0; j < tabFavCharDescri[i].length; j++) {
+        if (i === 0) {
+          if (tabFavCharDescri[i][j] !== description) {
+            newFavCharDescri[0].push(tabFavCharDescri[i][j]);
+          }
+        } else {
+          if (tabFavCharDescri[i][j] !== description) {
+            newFavCharDescri[1].push(tabFavCharDescri[i][j]);
+          }
+        }
+      }
+    }
+    setFavCharacterDescri(newFavCharDescri);
+    Cookies.set("favCharDescri", JSON.stringify(newFavCharDescri));
+  };
+  //Retirer l'Id du personnage
   const RemoveFav = (id) => {
     const fav = Cookies.get("fav");
     const tabFav = fav && JSON.parse(fav);
@@ -143,6 +178,7 @@ function App() {
     console.log("APP : fav =====> ", fav);
   };
   //
+  console.log("APP : favCharacterDescri =====> ", favCharacterDescri);
   //
   return (
     <>
@@ -167,7 +203,9 @@ function App() {
             element={
               <Characters
                 setFavCharacter={setFavCharacter}
+                setFavCharacterDescri={setFavCharacterDescri}
                 addFav={addFav}
+                addFavDescri={addFavDescri}
                 handleHeader={handleHeader}
                 setColorItemChar={setColorItemChar}
                 setBorderItemChar={setBorderItemChar}
@@ -185,8 +223,10 @@ function App() {
             element={
               <Characters
                 setFavCharacter={setFavCharacter}
+                setFavCharacterDescri={setFavCharacterDescri}
                 addFav={addFav}
                 addFavCharacter={addFavCharacter}
+                addFavDescri={addFavDescri}
                 handleHeader={handleHeader}
                 setColorItemChar={setColorItemChar}
                 setBorderItemChar={setBorderItemChar}
@@ -236,6 +276,7 @@ function App() {
                 setBorderItemFav={setBorderItemFav}
                 setColorItemSignIn={setColorItemSignIn}
                 setColorItemJoin={setColorItemJoin}
+                favCharacterDescri={favCharacterDescri}
               />
             }
           />
@@ -280,8 +321,10 @@ function App() {
                 userToken={userToken}
                 fav={fav}
                 favCharacter={favCharacter}
+                favCharacterDescri={favCharacterDescri}
                 RemoveFav={RemoveFav}
                 RemoveFavCharacter={RemoveFavCharacter}
+                RemoveFavCharacterDescri={RemoveFavCharacterDescri}
                 handleHeader={handleHeader}
                 setColorItemChar={setColorItemChar}
                 setBorderItemChar={setBorderItemChar}

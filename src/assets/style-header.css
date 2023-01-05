@@ -40,9 +40,18 @@
 @media (max-width: 768px) {
   .header-join,
   .header-signin,
-  .header-split,
+  .header-split {
+    display: none;
+  }
+}
+@media (max-width: 370px) {
   .header-quit {
     display: none;
+  }
+}
+@media (max-width: 320px) {
+  .logout-img {
+    visibility: hidden;
   }
 }
 .header-desktopNav-top {

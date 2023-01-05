@@ -14,6 +14,8 @@ export default function CharacterCard({
   data,
   addFav,
   addFavCharacter,
+  addFavDescri,
+  setFavCharacterDescri,
 }) {
   const navigate = useNavigate();
   const userToken = Cookies.get("userToken");
@@ -23,8 +25,14 @@ export default function CharacterCard({
     <>
       {!imageCharacter.includes("image_not_available") && cTExt === "jpg" && (
         <div key={id} className="characters-containerForEachCharacter">
-          <div className="characters-card-top ">
-            <div className="container-imageCharacter shine">
+          <div className="characters-card-top">
+            <div
+              className="container-imageCharacter shine click"
+              onClick={() => {
+                navigate(`/character/${id}`);
+                setFavCharacterDescri(cDescrip);
+              }}
+            >
               <img
                 className="imageCharacter"
                 src={imageCharacter}
@@ -51,6 +59,7 @@ export default function CharacterCard({
                         <>
                           {addFav(data._id, "character")};
                           {addFavCharacter(cName)}
+                          {addFavDescri(cDescrip)}
                         </>
                       ) : (
                         navigate("/signin")

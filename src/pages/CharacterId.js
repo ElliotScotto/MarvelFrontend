@@ -20,6 +20,7 @@ const CharacterId = ({
   setBorderItemFav,
   setColorItemSignIn,
   setColorItemJoin,
+  favCharacterDescri,
 }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -63,49 +64,62 @@ const CharacterId = ({
   return isLoading ? (
     <Loading />
   ) : (
-    <div className="characterId-all-comics BordRed" key={params.characterId}>
+    <div className="characterId-all-comics" key={params.characterId}>
       <div className="infos-character-container">
-        <div className="characterId-image relative">
-          <div className="nameCharacterId relative">
-            <p>{data.name}</p>
-            <div className="whiteAngleInCharId">
-              <img
-                className="whiteAngle-icon"
-                src={whiteTriangle}
-                alt="white-triangle-Fav1"
-              />
+        <div className="containerCharIdImageAndDescrip">
+          <div className="characterIdDescrip">
+            <div className="characterIdDescripTitle">Description</div>
+            <div>
+              {favCharacterDescri.length !== 0 ? (
+                <p>{favCharacterDescri}</p>
+              ) : (
+                <p>Pas de description</p>
+              )}
+            </div>
+            <div className="character-all-comics">
+              <div className="characterIdApparitionTitle">Apparition(s)</div>
+              <div className="CharacterIdViews">
+                <div className="displayApparitionsinCharacterId">
+                  <div>
+                    <span>{data.comics.length}</span>
+                  </div>
+                  <div>comics</div>
+                </div>
+                <div className="comicsList">
+                  {data.comics.map((comic, index) => {
+                    return (
+                      <div key={index}>
+                        <div className="comicsList">
+                          <div className="comicTitle" key={index}>
+                            {comic}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
-          <img
-            className="imageCharacterId"
-            src={data.thumbnail.path + "." + data.thumbnail.extension}
-            alt="image_character"
-          />
-        </div>
-        <div className="character-all-comics">
-          <p className="CharacterIdViews">
-            Apparu dans {data.comics.length} comics :
-          </p>
-          {data.comics.map((comic, index) => {
-            return (
-              <div key={index}>
-                <ul className="comicsList">
-                  <li className="comicTitle" key={index}>
-                    {comic}
-                  </li>
-                </ul>
+          <div className="characterId-image relative">
+            <div className="nameCharacterId relative">
+              <p>{data.name}</p>
+              <div className="whiteAngleInCharId">
+                <img
+                  className="whiteAngle-icon"
+                  src={whiteTriangle}
+                  alt="white-triangle-Fav1"
+                />
               </div>
-            );
-          })}
+            </div>
+            <img
+              className="imageCharacterId"
+              src={data.thumbnail.path + "." + data.thumbnail.extension}
+              alt="image_character"
+            />
+          </div>
         </div>
       </div>
-      {/* <div className="characterId-comics">
-        <ul className="comic-detail">
-          {data.results.comics.map((comic, index) => {
-            return <li key={characterId}> {comic.title}</li>;
-          })}
-        </ul>
-      </div> */}
     </div>
   );
 };

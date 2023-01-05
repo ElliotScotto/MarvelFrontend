@@ -2,19 +2,46 @@
 /*Character/:CharacterId*/
 
 .characterId-all-comics {
-  margin: 0 20px;
+  margin: 0 auto;
+  max-width: 1184px;
   width: auto;
+  border: #e6232a solid 2px;
+  padding-bottom: 20px;
 }
 .infos-character-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 0 20px;
+  align-items: flex-end;
+  margin: 0 10px 0 10px;
+}
+.containerCharIdImageAndDescrip {
+  display: flex;
+  gap: 18px;
+}
+.characterIdDescrip {
+  /* border: green solid 1px; */
+  font-size: 22px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 10px;
+  line-height: 26px;
+}
+.characterIdDescripTitle,
+.characterIdApparitionTitle {
+  font-size: 28px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+.characterId-image {
+  display: flex;
+  width: 60%;
 }
 .nameCharacterId {
-  font-size: 36px;
+  font-size: 32px;
   width: fit-content;
   position: absolute;
   top: 0px;
@@ -24,10 +51,7 @@
   color: white;
   box-shadow: rgba(0, 0, 0, 0.5) 4px 8px 4px;
 }
-.CharacterIdViews {
-}
 .imageCharacterId {
-  margin-top: 10px;
   margin-left: 10px;
   width: 100%;
   height: auto;
@@ -40,15 +64,46 @@
   transform: rotate(65deg);
 }
 .character-all-comics {
-  margin-top: 10px;
+  margin: 40px auto 0px 0px;
+  padding-top: 10px;
+  padding-bottom: 20px;
   flex-direction: column;
-  align-items: left;
+  /* border: #e6232a solid 1px; */
+  width: 100%;
+  background-color: #202020;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 2px;
 }
-
+.characterIdApparitionTitle {
+  color: white;
+}
+.CharacterIdViews {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 18px;
+  width: 100%;
+  color: white;
+}
+.displayApparitionsinCharacterId {
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
+}
+.CharacterIdViews span {
+  font-size: 22px;
+}
 .comicsList {
   display: flex;
+  flex-direction: column;
+  align-items: left;
   font-weight: 500;
+  color: white;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
 }
-.comicsList li {
-  list-style: disc;
+.comicTitle {
+  margin-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
