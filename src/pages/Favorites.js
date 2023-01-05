@@ -75,7 +75,7 @@ const Favorites = ({
       {data.map((elem, index) => {
         return index === 0 ? (
           elem.length > 0 || fav[0][0] ? (
-            <div key={index} className="containerFavCharacters BordGreen">
+            <div key={index} className="containerFavCharacters">
               <div className="relative">
                 <p className="favTitle">Personnage(s) favori(s)</p>
               </div>

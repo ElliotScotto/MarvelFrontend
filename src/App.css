@@ -22,7 +22,7 @@ body {
   border: solid 1px black;
 }
 .BordRed {
-  border: solid 1px red;
+  border: solid 1px #e6232a;
 }
 .BordGold {
   border: solid 1px gold;
@@ -244,27 +244,4 @@ body {
 .whiteAngle-icon {
   height: 30px;
   width: 30px;
-}
-
-/*
-/*Character/:CharacterId*/
-.character-all-comics {
-  margin-top: 50px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  border: solid 2px green;
-}
-
-.comicsList {
-  display: flex;
-  font-weight: 900;
-}
-.comicsList li {
-  list-style: disc;
-}
-.nameCharacterId {
-  margin: 8px;
-  font-size: 22px;
-  color: black;
 }

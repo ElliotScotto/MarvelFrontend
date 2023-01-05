@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 //import components
 import Loading from "../components/Loading";
-//import files
-// import searchIcon from "../assets/images/searchIcon.svg";
+//import images
+import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
 //
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 //
@@ -63,21 +63,28 @@ const CharacterId = ({
   return isLoading ? (
     <Loading />
   ) : (
-    <div className="characterId-all-comics" key={params.characterId}>
+    <div className="characterId-all-comics BordRed" key={params.characterId}>
       <div className="infos-character-container">
-        <div className="nameCharacterId">
-          <p>{data.name}</p>
-        </div>
-        <div className="characterId-image">
+        <div className="characterId-image relative">
+          <div className="nameCharacterId relative">
+            <p>{data.name}</p>
+            <div className="whiteAngleInCharId">
+              <img
+                className="whiteAngle-icon"
+                src={whiteTriangle}
+                alt="white-triangle-Fav1"
+              />
+            </div>
+          </div>
           <img
-            className="imageCharacter"
+            className="imageCharacterId"
             src={data.thumbnail.path + "." + data.thumbnail.extension}
             alt="image_character"
           />
         </div>
         <div className="character-all-comics">
           <p className="CharacterIdViews">
-            Ce personnage est apparu dans {data.comics.length} comics :
+            Apparu dans {data.comics.length} comics :
           </p>
           {data.comics.map((comic, index) => {
             return (
