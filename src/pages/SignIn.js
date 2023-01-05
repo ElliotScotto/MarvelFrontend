@@ -4,17 +4,45 @@ import toast from "react-hot-toast";
 //Import Components
 
 //Import React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 //
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
-const SignIn = ({ handleToken }) => {
+const SignIn = ({
+  handleToken,
+  handleHeader,
+  setColorItemFav,
+  setBorderItemFav,
+  setColorItemChar,
+  setBorderItemChar,
+  setColorItemComics,
+  setBorderItemComics,
+  setColorItemSignIn,
+  setColorItemJoin,
+}) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+  //
+  //
+  useEffect(() => {
+    const handleStyle = () => {
+      setColorItemFav("grey");
+      setBorderItemFav("#202020");
+      setColorItemChar("grey");
+      setBorderItemChar("#202020");
+      setColorItemComics("grey");
+      setBorderItemComics("#202020");
+      setColorItemSignIn("#e6232a");
+      setColorItemJoin("white");
+      handleHeader("SignIn");
+    };
+    handleStyle();
+  });
+  //
   //
   const handleSubmit = async (event) => {
     event.preventDefault();

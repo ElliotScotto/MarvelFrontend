@@ -1,21 +1,53 @@
-import "../assets/style-header.css";
+//Images
 import logout from "../assets/images/logout.svg";
-//
-import { Link } from "react-router-dom";
 import logomarvel from "../assets/images/logomarvel.png";
-//
-const Header = ({ handleToken, userToken }) => {
+//React
+import { Link } from "react-router-dom";
+//Packages
+import toast from "react-hot-toast";
+import Cookies from "js-cookie";
+//import utils
+// import NavStyle from "../utils/NavStyle";
+const Header = ({
+  handleToken,
+  userToken,
+  colorItemChar,
+  borderItemChar,
+  colorItemComics,
+  borderItemComics,
+  colorItemFav,
+  borderItemFav,
+  colorItemSignIn,
+  colorItemJoin,
+}) => {
+  //
+  console.log("pageName ===> ", Cookies.get("pageName"));
+  //
   return (
     <div className="header-desktopNav">
       <div className="header-container-user">
         {!userToken ? (
           <>
             <Link className="Btn-Link" to="/signin">
-              <div className="header-signin">SIGN IN</div>
+              <div
+                className="header-signin"
+                style={{
+                  color: colorItemSignIn,
+                }}
+              >
+                SIGN IN
+              </div>
             </Link>
             <div className="header-split">|</div>
             <Link className="Btn-Link" to="/join">
-              <div className="header-join">JOIN</div>
+              <div
+                className="header-join"
+                style={{
+                  color: colorItemJoin,
+                }}
+              >
+                JOIN
+              </div>
             </Link>
           </>
         ) : (
@@ -23,6 +55,9 @@ const Header = ({ handleToken, userToken }) => {
             className="logout-style"
             onClick={() => {
               handleToken();
+              toast.success(`Vous êtes déconnecté.`, {
+                duration: 4000,
+              });
             }}
           >
             <div>
@@ -40,17 +75,36 @@ const Header = ({ handleToken, userToken }) => {
       </div>
 
       <div className="header-desktopNav-bottom">
-        <ul className="header-desktopNav-bottom-nav">
-          <Link to="/characters" className="Btn-Link">
-            <li className="header-desktopNav-bottom-link">PERSONNAGES</li>
-          </Link>
-          <Link to="/comics" className="Btn-Link">
-            <li className="header-desktopNav-bottom-link">COMICS</li>
-          </Link>
-          <Link to="/favorites" className="Btn-Link">
-            <li className="header-desktopNav-bottom-link">FAVORIS</li>
-          </Link>
-        </ul>
+        <Link
+          to="/characters"
+          className="Btn-Link Link-Menu-Style"
+          style={{
+            color: colorItemChar,
+            borderColor: borderItemChar,
+          }}
+        >
+          <p className="header-desktopNav-bottom-link">PERSONNAGES</p>
+        </Link>
+        <Link
+          to="/comics"
+          className="Btn-Link Link-Menu-Style"
+          style={{
+            color: colorItemComics,
+            borderColor: borderItemComics,
+          }}
+        >
+          <p className="header-desktopNav-bottom-link">COMICS</p>
+        </Link>
+        <Link
+          to="/favorites"
+          className="Btn-Link Link-Menu-Style"
+          style={{
+            color: colorItemFav,
+            borderColor: borderItemFav,
+          }}
+        >
+          <p className="header-desktopNav-bottom-link">FAVORIS</p>
+        </Link>
       </div>
     </div>
   );

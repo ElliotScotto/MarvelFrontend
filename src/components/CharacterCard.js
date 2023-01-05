@@ -13,6 +13,7 @@ export default function CharacterCard({
   cDescrip,
   data,
   addFav,
+  addFavCharacter,
 }) {
   const navigate = useNavigate();
   const userToken = Cookies.get("userToken");
@@ -46,9 +47,14 @@ export default function CharacterCard({
                   alt="user-fav-icon-plus"
                   onClick={() => {
                     {
-                      userToken
-                        ? addFav(data._id, "character")
-                        : navigate("/signin");
+                      userToken ? (
+                        <>
+                          {addFav(data._id, "character")};
+                          {addFavCharacter(cName)}
+                        </>
+                      ) : (
+                        navigate("/signin")
+                      );
                     }
                   }}
                 />

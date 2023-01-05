@@ -1,13 +1,7 @@
-//
 //import React
 import React, { useState, useEffect } from "react";
-import { HashLink } from "react-router-hash-link";
 //import packages
 import axios from "axios";
-//import files
-import arrowUp from "../assets/images/circle-arrow-up-solid.svg";
-import arrowLeft from "../assets/images/arrow-left.svg";
-import arrowRight from "../assets/images/arrow-right.svg";
 //import components
 import Loading from "../components/Loading";
 import CharacterCard from "../components/CharacterCard.js";
@@ -18,11 +12,40 @@ import Footer from "../components/Footer";
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
-const Characters = ({ addFav }) => {
+const Characters = ({
+  addFav,
+  addFavCharacter,
+  handleHeader,
+  setColorItemChar,
+  setBorderItemChar,
+  setColorItemComics,
+  setBorderItemComics,
+  setColorItemFav,
+  setBorderItemFav,
+  setColorItemSignIn,
+  setColorItemJoin,
+}) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [characterName, setCharacterName] = useState("");
+  //
+  //
+  useEffect(() => {
+    const handleStyle = () => {
+      setColorItemChar("white");
+      setBorderItemChar("#e6232a");
+      setColorItemComics("grey");
+      setBorderItemComics("#202020");
+      setColorItemFav("grey");
+      setBorderItemFav("#202020");
+      setColorItemSignIn("white");
+      setColorItemJoin("white");
+      handleHeader("Characters");
+    };
+    handleStyle();
+  });
+  //
   //
   useEffect(() => {
     const fetchData = async () => {
@@ -62,8 +85,8 @@ const Characters = ({ addFav }) => {
                 cTExt={character.thumbnail.extension}
                 cName={character.name}
                 cDescrip={character.description}
-                character={character}
                 addFav={addFav}
+                addFavCharacter={addFavCharacter}
               />
             );
           })}

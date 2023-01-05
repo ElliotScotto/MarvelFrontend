@@ -1,5 +1,5 @@
 // import react
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 //Import Components
 
@@ -9,10 +9,38 @@ import toast from "react-hot-toast";
 //
 const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
-const Join = ({ handleToken }) => {
+const Join = ({
+  handleToken,
+  handleHeader,
+  setColorItemFav,
+  setBorderItemFav,
+  setColorItemChar,
+  setBorderItemChar,
+  setColorItemComics,
+  setBorderItemComics,
+  setColorItemSignIn,
+  setColorItemJoin,
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  //
+  //
+  useEffect(() => {
+    const handleStyle = () => {
+      setColorItemFav("grey");
+      setBorderItemFav("#202020");
+      setColorItemChar("grey");
+      setBorderItemChar("#202020");
+      setColorItemComics("grey");
+      setBorderItemComics("#202020");
+      handleHeader("Join");
+      setColorItemSignIn("white");
+      setColorItemJoin("#e6232a");
+    };
+    handleStyle();
+  });
+  //
   //
   const handleSubmit = async (event) => {
     event.preventDefault();

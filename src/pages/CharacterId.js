@@ -3,19 +3,46 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 //import packages
 import axios from "axios";
+//import components
+import Loading from "../components/Loading";
 //import files
 // import searchIcon from "../assets/images/searchIcon.svg";
 //
 const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 //
-const CharacterId = () => {
+const CharacterId = ({
+  handleHeader,
+  setColorItemChar,
+  setBorderItemChar,
+  setColorItemComics,
+  setBorderItemComics,
+  setColorItemFav,
+  setBorderItemFav,
+  setColorItemSignIn,
+  setColorItemJoin,
+}) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   // const [characterId, setCharacterId] = useState("");
   // const [comicsTitle, setComicsTitle] = useState("");
   const params = useParams();
   //
-
+  //
+  useEffect(() => {
+    const handleStyle = () => {
+      setColorItemChar("white");
+      setBorderItemChar("#e6232a");
+      setColorItemComics("grey");
+      setBorderItemComics("#202020");
+      setColorItemFav("grey");
+      setBorderItemFav("#202020");
+      setColorItemSignIn("white");
+      setColorItemJoin("white");
+      handleHeader("character/id");
+    };
+    handleStyle();
+  });
+  //
   //
   useEffect(() => {
     const fetchData = async () => {
@@ -34,24 +61,13 @@ const CharacterId = () => {
     fetchData();
   }, [params.characterId]);
   return isLoading ? (
-    <span className="loading">Loading...</span>
+    <Loading />
   ) : (
     <div className="characterId-all-comics" key={params.characterId}>
-      <div className="title-page">Page Personnages dediée</div>
-      {/* <div className="searchBar">
-        <div className="search-image">
-          <img className="searchIcon" src={searchIcon} alt="icon_searchbar" />
-        </div>
-        <div className="searchInput">
-          <input
-            type="text"
-            placeholder="Rechercher un personnage"
-            value={comicsTitle}
-            onChange={(event) => setComicsTitle(event.target.value)}
-          />
-        </div>
-      </div> */}
       <div className="infos-character-container">
+        <div className="nameCharacterId">
+          <p>{data.name}</p>
+        </div>
         <div className="characterId-image">
           <img
             className="imageCharacter"
@@ -60,8 +76,8 @@ const CharacterId = () => {
           />
         </div>
         <div className="character-all-comics">
-          <p className="nameCharacterId">
-            {data.name} est apparu dans {data.comics.length} comics :
+          <p className="CharacterIdViews">
+            Ce personnage est apparu dans {data.comics.length} comics :
           </p>
           {data.comics.map((comic, index) => {
             return (

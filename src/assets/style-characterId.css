@@ -1,0 +1,14 @@
+.infos-character-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.nameCharacterId {
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+}
+.CharacterIdViews {
+}

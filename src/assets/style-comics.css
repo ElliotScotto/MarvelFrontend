@@ -1,0 +1,95 @@
+/*
+/* COMICS */
+.comics-main-container {
+  width: 1100px;
+  height: 5000px;
+  margin: 0 auto;
+  /* border: solid 1px green; */
+  height: fit-content;
+  padding-bottom: 20px;
+}
+.characters-all-comics {
+  box-sizing: border-box;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  /* border: solid 1px red; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: fit-content;
+}
+.comics-containerForEachComic {
+  width: 250px;
+  height: 250px;
+  /* border: solid 1px lightgrey; */
+  border-radius: 2px;
+  display: flex;
+  position: relative;
+}
+.comics-left-block {
+  /* border: solid 1px yellow; */
+  width: fit-content;
+  /* cursor: pointer; */
+}
+.imageComic {
+  height: 100%;
+  width: 100%;
+  margin-left: 43px;
+
+  object-fit: contain;
+}
+.comics-right-block {
+  background-color: #202020;
+  height: 250px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+}
+.comics-right-block-animation {
+  box-sizing: border-box;
+  border: solid 1px red;
+  display: flex;
+  flex-direction: column;
+  width: 65px;
+  height: 100%;
+  background-color: #202020;
+  transition: width 0.3s, background-color 1s, transform 1s;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.comics-right-block-animation:hover {
+  /* background-color: #202020; */
+  width: 250px;
+  height: 100%;
+}
+.hiddenDetails {
+  visibility: hidden;
+}
+.hiddenDetails :hover {
+  visibility: visible;
+}
+.comics-info-title {
+  background-color: #e6232a;
+  height: 20px;
+  width: auto;
+  display: flex;
+  padding: 5px;
+}
+.comics-title {
+  color: white;
+  font-size: 18px;
+  overflow: hidden;
+}
+.comics-info-details {
+  padding: 5px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: calc(95%);
+}
+.comics-details {
+  color: white;
+  font-size: 16px;
+  line-height: 18px;
+}
