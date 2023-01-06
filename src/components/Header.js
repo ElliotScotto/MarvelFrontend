@@ -5,7 +5,6 @@ import logomarvel from "../assets/images/logomarvel.png";
 import { Link } from "react-router-dom";
 //Packages
 import toast from "react-hot-toast";
-import Cookies from "js-cookie";
 //import utils
 // import NavStyle from "../utils/NavStyle";
 const Header = ({
@@ -21,7 +20,7 @@ const Header = ({
   colorItemJoin,
 }) => {
   //
-  console.log("pageName ===> ", Cookies.get("pageName"));
+
   //
   return (
     <div className="header-desktopNav">
@@ -106,7 +105,6 @@ const Header = ({
         >
           <p className="header-desktopNav-bottom-link">FAVORIS</p>
         </Link>
-        <div className="RedBar"></div>
       </div>
     </div>
   );

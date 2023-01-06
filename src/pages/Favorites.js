@@ -34,9 +34,19 @@ const Favorites = ({
   setColorItemJoin,
 }) => {
   const navigate = useNavigate();
+  // const location = useLocation();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   //
+  // console.log(
+  //   "FAVORITES : location.state.characterIdDescri ===> ",
+  //   location.state.characterIdDescri
+  // );
+  // const [descripFav, setDescripFav] = useState(
+  //   location.state.characterIdDescri
+  // );
+  // console.log("FAVORITES : descripFav ===> ", descripFav);
+
   //
   useEffect(() => {
     const handleStyle = () => {

@@ -1,7 +1,7 @@
 import chevronDown from "../assets/images/chevron-down.svg";
 import userPlus from "../assets/images/user-plus.svg";
 import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
-
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //import packages
 import Cookies from "js-cookie";
@@ -21,6 +21,8 @@ export default function CharacterCard({
   setFavCharacterDescri,
   fav,
 }) {
+  const [characterIdDescri, setCharacterIdDescri] = useState();
+  console.log("CHARACTERCARD : characterIdDescri ===> ", characterIdDescri);
   const navigate = useNavigate();
   const userToken = Cookies.get("userToken");
   //
@@ -36,7 +38,9 @@ export default function CharacterCard({
             <div
               className="container-imageCharacter shine click"
               onClick={() => {
-                navigate(`/character/${id}`);
+                navigate(`/character/${id}`, {
+                  state: { characterIdDescri: cDescrip },
+                });
                 setFavCharacterDescri(cDescrip);
               }}
             >
@@ -66,7 +70,27 @@ export default function CharacterCard({
                         <>
                           {addFav(data._id, "character")};
                           {addFavCharacter(cName)}
-                          {/* {addFavDescri(cDescrip)} */}
+                          {addFavDescri(cDescrip)}
+                          {console.log("cDescrip ==== > ", cDescrip)};
+                          {console.log(
+                            "cDescrip.length ==== > ",
+                            cDescrip.length
+                          )}
+                          {cDescrip.length > 2 ? (
+                            navigate("/favorites", {
+                              state: { characterIdDescri: cDescrip },
+                            })
+                          ) : (
+                            <>
+                              {navigate("/favorites", {
+                                state: {
+                                  characterIdDescri:
+                                    "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Voluptate, maxime!",
+                                },
+                              })}
+                            </>
+                          )}
+                          ;
                         </>
                       ) : (
                         <>

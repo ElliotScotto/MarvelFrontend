@@ -93,6 +93,7 @@ const Characters = ({
                 addFavDescri={addFavDescri}
                 setFavCharacterDescri={setFavCharacterDescri}
                 fav={fav}
+                handleHeader={handleHeader}
               />
             );
           })}

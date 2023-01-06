@@ -72,14 +72,8 @@
   width: auto;
   height: 40px;
   gap: 10px;
-  position: relative;
 }
-.RedBar {
-  height: 30px;
-  border-right: #e6232a solid 2px;
-  position: absolute;
-  top: 100%;
-}
+
 .header-desktopNav-bottom-link {
   padding: 9px;
   height: 100%;

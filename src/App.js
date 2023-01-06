@@ -65,6 +65,7 @@ function App() {
   //
   const handleHeader = (focus) => {
     Cookies.set("pageName", focus, { expires: 1 });
+    console.log("pageName ===> ", Cookies.get("pageName"));
     return focus;
   };
   //

@@ -1,6 +1,8 @@
 //import React
 import React, { useState, useEffect } from "react";
+//Navigation
 import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 //import packages
 import axios from "axios";
 //import components
@@ -10,7 +12,6 @@ import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
 //
 //
 const CharacterId = ({
-  handleHeader,
   setColorItemChar,
   setBorderItemChar,
   setColorItemComics,
@@ -20,10 +21,16 @@ const CharacterId = ({
   setColorItemSignIn,
   setColorItemJoin,
   favCharacterDescri,
+  characterIdDescri,
 }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const [characterId, setCharacterId] = useState("");
+  const location = useLocation();
+  console.log("CHARACTERID : characterIdDescri ===> ", characterIdDescri);
+  console.log(
+    "CHARACTERID : location.state.characterIdDescri ===> ",
+    location.state.characterIdDescri
+  );
   // const [comicsTitle, setComicsTitle] = useState("");
   const params = useParams();
   //
@@ -38,7 +45,6 @@ const CharacterId = ({
       setBorderItemFav("#202020");
       setColorItemSignIn("white");
       setColorItemJoin("white");
-      handleHeader("character/id");
     };
     handleStyle();
   });
@@ -66,13 +72,14 @@ const CharacterId = ({
     <Loading />
   ) : (
     <div className="characterId-all-comics" key={params.characterId}>
+      {/* <div className="RedBar"></div> */}
       <div className="infos-character-container">
         <div className="containerCharIdImageAndDescrip">
           <div className="characterIdDescrip">
             <div className="characterIdDescripTitle">Description</div>
             <div>
-              {favCharacterDescri ? (
-                <p>{favCharacterDescri}</p>
+              {location.state.characterIdDescri ? (
+                <p>{location.state.characterIdDescri}</p>
               ) : (
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
