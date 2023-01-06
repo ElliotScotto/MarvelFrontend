@@ -8,7 +8,6 @@ import Loading from "../components/Loading";
 //import images
 import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
 //
-const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
 //
 const CharacterId = ({
   handleHeader,
@@ -49,7 +48,7 @@ const CharacterId = ({
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/character/${params.characterId}?apiKey=${REACT_APP_ELLIOT_APIKEY}`
+          `http://localhost:4000/character/${params.characterId}`
         );
         // console.log(params.characterId); //id de chaque personnage
         setData(response.data);
@@ -61,6 +60,8 @@ const CharacterId = ({
     };
     fetchData();
   }, [params.characterId]);
+  //
+  //
   return isLoading ? (
     <Loading />
   ) : (
@@ -70,10 +71,13 @@ const CharacterId = ({
           <div className="characterIdDescrip">
             <div className="characterIdDescripTitle">Description</div>
             <div>
-              {favCharacterDescri.length !== 0 ? (
+              {favCharacterDescri ? (
                 <p>{favCharacterDescri}</p>
               ) : (
-                <p>Pas de description</p>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Voluptate, maxime! (NC from API)
+                </p>
               )}
             </div>
             <div className="character-all-comics">

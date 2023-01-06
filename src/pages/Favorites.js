@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router-dom";
 //images
 import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
+import userPlus from "../assets/images/user-plus.svg";
 //import React
 import React, { useState, useEffect } from "react";
 //import packages
@@ -18,6 +19,7 @@ const Favorites = ({
   fav,
   favCharacter,
   favCharacterDescri,
+  setFavCharacterDescri,
   RemoveFav,
   RemoveFavCharacter,
   RemoveFavCharacterDescri,
@@ -212,6 +214,16 @@ const Favorites = ({
                 >
                   en cliquant ici
                 </span>
+                <div className="iconAddCharinFav">
+                  <img
+                    className="icon-user-plusInFav"
+                    src={userPlus}
+                    alt="user-fav-icon-plus"
+                    onClick={() => {
+                      navigate("/characters");
+                    }}
+                  />
+                </div>
               </div>
               <div className="whiteAngleInNOFav2">
                 <img

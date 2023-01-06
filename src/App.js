@@ -50,6 +50,7 @@ function App() {
   const [favCharacterDescri, setFavCharacterDescri] = useState(
     (cookie3 && JSON.parse(cookie3)) || [[], []]
   );
+
   //
   //
   const handleToken = (token) => {
@@ -178,7 +179,7 @@ function App() {
     console.log("APP : fav =====> ", fav);
   };
   //
-  console.log("APP : favCharacterDescri =====> ", favCharacterDescri);
+  console.log("APP : fav[0].length =====> ", fav[0].length);
   //
   return (
     <>
@@ -215,6 +216,7 @@ function App() {
                 setBorderItemFav={setBorderItemFav}
                 setColorItemSignIn={setColorItemSignIn}
                 setColorItemJoin={setColorItemJoin}
+                fav={fav}
               />
             }
           />
@@ -236,6 +238,7 @@ function App() {
                 setBorderItemFav={setBorderItemFav}
                 setColorItemSignIn={setColorItemSignIn}
                 setColorItemJoin={setColorItemJoin}
+                fav={fav}
               />
             }
           />
@@ -321,6 +324,7 @@ function App() {
                 userToken={userToken}
                 fav={fav}
                 favCharacter={favCharacter}
+                setFavCharacterDescri={setFavCharacterDescri}
                 favCharacterDescri={favCharacterDescri}
                 RemoveFav={RemoveFav}
                 RemoveFavCharacter={RemoveFavCharacter}

@@ -1,8 +1,11 @@
 import chevronDown from "../assets/images/chevron-down.svg";
 import userPlus from "../assets/images/user-plus.svg";
 import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
-import Cookies from "js-cookie";
+
 import { useNavigate } from "react-router-dom";
+//import packages
+import Cookies from "js-cookie";
+import toast from "react-hot-toast";
 //
 //
 export default function CharacterCard({
@@ -16,11 +19,16 @@ export default function CharacterCard({
   addFavCharacter,
   addFavDescri,
   setFavCharacterDescri,
+  setCharDescription,
+  fav,
 }) {
   const navigate = useNavigate();
   const userToken = Cookies.get("userToken");
   //
   const imageCharacter = cTPath + "." + cTExt;
+  //
+  console.log("CHARACTERCARD : fav[0].length =====> ", fav[0].length);
+  //
   return (
     <>
       {!imageCharacter.includes("image_not_available") && cTExt === "jpg" && (
@@ -54,17 +62,27 @@ export default function CharacterCard({
                   src={userPlus}
                   alt="user-fav-icon-plus"
                   onClick={() => {
-                    {
-                      userToken ? (
+                    userToken ? (
+                      fav[0].length < 10 ? (
                         <>
                           {addFav(data._id, "character")};
                           {addFavCharacter(cName)}
                           {addFavDescri(cDescrip)}
+                          {setCharDescription(cDescrip)}
                         </>
                       ) : (
-                        navigate("/signin")
-                      );
-                    }
+                        <>
+                          {toast.error(
+                            "Vous avez déjà 10 personnages dans votre liste !",
+                            {
+                              duration: 4000,
+                            }
+                          )}
+                        </>
+                      )
+                    ) : (
+                      navigate("/signin")
+                    );
                   }}
                 />
               </p>
@@ -76,11 +94,11 @@ export default function CharacterCard({
               />
             </div>
             <div className="container-descriptionCharacter">
-              <p className="descriptionCharacter hiddenCard">
+              <div className="descriptionCharacter hiddenCard">
                 {cDescrip
                   ? cDescrip
-                  : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, maxime!"}
-              </p>
+                  : "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Voluptate, maxime!"}
+              </div>
             </div>
             <div className="whiteAngle">
               <img

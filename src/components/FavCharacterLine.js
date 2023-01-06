@@ -1,7 +1,7 @@
 //React
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 //import Images
-import CharacterInfo from "../assets/images/address-card-regular.svg";
+// import CharacterInfo from "../assets/images/address-card-regular.svg";
 import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
 import DrSpectrum from "../assets/images/dr-spectrum-svgrepo.svg";
 //import packages
@@ -15,14 +15,14 @@ export default function FavCharacterLine({
   RemoveFavCharacter,
   RemoveFavCharacterDescri,
 }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   //
   return (
     <div className="favCharacter">
-      <div
+      {/* <div
         className="click charInfo"
         onClick={() => {
-          navigate(`/character/${fav}`, favCharacterDescri);
+          navigate(`/character/${fav}`);
         }}
       >
         <img
@@ -30,7 +30,7 @@ export default function FavCharacterLine({
           src={CharacterInfo}
           alt="character-info"
         />
-      </div>
+      </div> */}
       <div className="infoFav BGMarvelBlack relative">
         <div className="whiteAngleInFav1">
           <img

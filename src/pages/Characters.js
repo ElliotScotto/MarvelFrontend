@@ -26,6 +26,7 @@ const Characters = ({
   setColorItemSignIn,
   setColorItemJoin,
   setFavCharacterDescri,
+  fav,
 }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -91,6 +92,7 @@ const Characters = ({
                 addFavCharacter={addFavCharacter}
                 addFavDescri={addFavDescri}
                 setFavCharacterDescri={setFavCharacterDescri}
+                fav={fav}
               />
             );
           })}
