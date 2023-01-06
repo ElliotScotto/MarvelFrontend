@@ -1,9 +1,8 @@
 import { Toaster } from "react-hot-toast";
-const Toaster = () => {
+export default function Toaster() {
   return (
     <div>
       <Toaster />
     </div>
   );
-};
-export default Toaster;
+}

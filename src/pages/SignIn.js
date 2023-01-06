@@ -47,7 +47,10 @@ const SignIn = ({
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
-      toast.error("Vos mots de passe ne sont pas identiques");
+      toast.error("Vos mots de passe ne sont pas identiques", {
+        duration: 5000,
+        style: { fontSize: 18 },
+      });
     } else {
       try {
         const response = await axios.post(
@@ -64,11 +67,13 @@ const SignIn = ({
         if (response.data.token) {
           toast.success(`Bravo ${username} ! vous êtes inscrit.`, {
             duration: 4000,
+            style: { fontSize: 18 },
           });
           navigate("/characters");
         } else {
           toast.error("L'accès est bloqué : ", response.data, {
             duration: 5000,
+            style: { fontSize: 18 },
           });
         }
       } catch (error) {
@@ -80,6 +85,9 @@ const SignIn = ({
   return (
     <div className="claws">
       <div className="signin-container">
+        <span>
+          Créer un compte vous donnera accès à votre liste de favoris...
+        </span>
         <div className="signin-title">
           <h1>Sign In</h1>
         </div>

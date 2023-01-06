@@ -8,6 +8,7 @@
   border: #e6232a solid 2px;
   padding-bottom: 20px;
 }
+
 .infos-character-container {
   display: flex;
   flex-direction: column;
@@ -60,9 +61,13 @@
 }
 .whiteAngleInCharId {
   position: absolute;
-  top: -15px;
-  left: -16px;
-  transform: rotate(65deg);
+  top: -14px;
+  left: -12px;
+  transform: rotate(70deg);
+}
+.whiteAngle-iconCharId {
+  height: 30px;
+  width: 30px;
 }
 .character-all-comics {
   margin: 40px auto 0px 0px;

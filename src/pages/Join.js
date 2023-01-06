@@ -64,18 +64,23 @@ const Join = ({
         } else {
           toast.error("Etes-vous bien inscrit ?", {
             duration: 5000,
+            style: { fontSize: 18 },
           });
         }
       } catch (error) {
         console.log(error);
       }
     } else {
-      toast.error("Votre mot de passe doit contenir 8 caractères minimum.");
+      toast.error("Votre mot de passe doit contenir 8 caractères minimum.", {
+        duration: 5000,
+        style: { fontSize: 18 },
+      });
     }
   };
   //
   return (
     <div className="join-container">
+      <span>Déjà inscrit ? Connectez-vous ci-dessous...</span>
       <div className="join-title">
         <h1>Join</h1>
       </div>

@@ -92,20 +92,24 @@ function App() {
         favCopy[0].push(id);
         toast.success("Favoris ajouté !", {
           duration: 2000,
+          style: { fontSize: 18 },
         });
       } else {
         toast.error("Déjà en favoris !", {
           duration: 4000,
+          style: { fontSize: 18 },
         });
       }
     } else if (favCopy[1].indexOf(id) === -1) {
       favCopy[1].push(id);
       toast.success("Personnage ajouté !", {
         duration: 2000,
+        style: { fontSize: 18 },
       });
     } else {
       toast.error("Déjà en favoris !", {
         duration: 4000,
+        style: { fontSize: 18 },
       });
     }
     setFav(favCopy);

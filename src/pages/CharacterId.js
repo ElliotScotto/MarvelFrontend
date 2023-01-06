@@ -110,7 +110,7 @@ const CharacterId = ({
               <p>{data.name}</p>
               <div className="whiteAngleInCharId">
                 <img
-                  className="whiteAngle-icon"
+                  className="whiteAngle-iconCharId"
                   src={whiteTriangle}
                   alt="white-triangle-Fav1"
                 />

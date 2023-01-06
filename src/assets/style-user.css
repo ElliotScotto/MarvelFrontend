@@ -4,7 +4,7 @@
 .join-container {
   box-sizing: border-box;
   /* border: solid 1px black; */
-  margin: 15vh auto;
+  margin: 5vh auto;
   width: 50vw;
   max-width: 500px;
   height: fit-content;
@@ -15,11 +15,21 @@
 /* .claws {
   background-image: url("../assets/images/claws.jpg");
 } */
+.signin-container span,
+.join-container span {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
 .signin-title,
 .join-title {
   /* border: solid 1px black; */
   font-size: 28px;
   margin-bottom: 40px;
+}
+.signin-title,
+.join-title {
+  margin-top: 20px;
 }
 .signin-form,
 .join-form {
@@ -69,8 +79,9 @@
   background-color: #e6232a;
   cursor: pointer;
 }
-.Btn-submit:hover {
-  opacity: 85%;
+.Btn-submit:hover,
+.BtnStyle:hover {
+  background-color: #e65656;
 }
 .alreadysigned {
   display: flex;

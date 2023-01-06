@@ -19,7 +19,6 @@ export default function CharacterCard({
   addFavCharacter,
   addFavDescri,
   setFavCharacterDescri,
-  setCharDescription,
   fav,
 }) {
   const navigate = useNavigate();
@@ -27,7 +26,7 @@ export default function CharacterCard({
   //
   const imageCharacter = cTPath + "." + cTExt;
   //
-  console.log("CHARACTERCARD : fav[0].length =====> ", fav[0].length);
+
   //
   return (
     <>
@@ -67,8 +66,7 @@ export default function CharacterCard({
                         <>
                           {addFav(data._id, "character")};
                           {addFavCharacter(cName)}
-                          {addFavDescri(cDescrip)}
-                          {setCharDescription(cDescrip)}
+                          {/* {addFavDescri(cDescrip)} */}
                         </>
                       ) : (
                         <>
@@ -76,6 +74,7 @@ export default function CharacterCard({
                             "Vous avez déjà 10 personnages dans votre liste !",
                             {
                               duration: 4000,
+                              style: { fontSize: 18 },
                             }
                           )}
                         </>

@@ -57,6 +57,7 @@ const Header = ({
               handleToken();
               toast.success(`Vous êtes déconnecté.`, {
                 duration: 4000,
+                style: { fontSize: 18 },
               });
             }}
           >
@@ -105,6 +106,7 @@ const Header = ({
         >
           <p className="header-desktopNav-bottom-link">FAVORIS</p>
         </Link>
+        <div className="RedBar"></div>
       </div>
     </div>
   );

@@ -55,6 +55,7 @@ export default function FavCharacterLine({
             RemoveFavCharacterDescri(favCharacterDescri);
             toast.success("Personnage supprimé !", {
               duration: 2000,
+              style: { fontSize: 18 },
             });
           }}
         >

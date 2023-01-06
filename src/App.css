@@ -39,6 +39,9 @@ body {
 .click {
   cursor: pointer;
 }
+.toasterStyle {
+  font-size: 8px;
+}
 /*
 /* SEARCH */
 .searchBar {
@@ -194,6 +197,7 @@ body {
   transform: scale(1.3);
   cursor: pointer;
 }
+
 .container-nameCharacter {
   position: relative;
 }

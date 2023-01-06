@@ -94,7 +94,7 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][0]}
                     favCharacter={favCharacter[0][0]}
-                    favCharacterDescri={favCharacterDescri[0][0]}
+                    favCharacterDescri={favCharacterDescri}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
