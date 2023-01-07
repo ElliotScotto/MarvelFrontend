@@ -1,10 +1,10 @@
 .fav-container-noToken {
-  width: 800px;
-  box-sizing: border-box;
+  width: 80%;
   height: 60vh;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+
   border: dashed 5px #e6232a;
   background-color: #202020;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
@@ -12,7 +12,7 @@
   margin: 0 auto;
 }
 .fav-blockLeft {
-  /* border: solid 2px gold; */
+  width: 50%;
 }
 .fav-blockRight {
   /* border: solid 2px green; */
@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   padding: 5px;
   margin-right: 10px;
 }
@@ -30,6 +30,7 @@
   font-size: 26px;
   color: white;
   font-style: oblique;
+  margin-bottom: 20px;
 }
 .joinOrSign {
   color: white;
@@ -50,11 +51,10 @@
   color: white;
   text-align: center;
 }
-
 .sadDeadpool-style {
-  margin-top: 150px;
+  margin-top: 200px;
   display: flex;
   align-items: center;
   width: auto;
-  height: 50vh;
+  height: 26vh;
 }

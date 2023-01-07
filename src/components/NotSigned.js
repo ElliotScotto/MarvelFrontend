@@ -19,9 +19,7 @@ const NotSigned = () => {
 
       <div className="fav-blockRight">
         <div className="fav_shame-user">
-          <p>
-            Quel dommage !<br /> Vous n'êtes pas connecté.
-          </p>
+          <p>Vous n'êtes pas connecté.</p>
         </div>
 
         <div

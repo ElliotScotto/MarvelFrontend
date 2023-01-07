@@ -2,10 +2,13 @@
 /* FOOTER */
 
 footer {
+  margin: 0 auto;
+  width: auto;
   border-top: #e6232a solid 1px;
   margin: 20px auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   position: relative;
 }
@@ -23,10 +26,13 @@ footer {
   border: solid 1px #e6232a;
   border-radius: 3px;
   cursor: pointer;
+  display: flex;
 }
-.Btn-page:hover,
 .arrowUp-style:hover {
   opacity: 70%;
+}
+.Btn-page:hover {
+  background-color: #e6232a;
 }
 .pages {
   display: flex;
@@ -42,4 +48,8 @@ footer {
   height: 13px;
   width: 13px;
   padding: 5px;
+}
+.icon-arrow-left:hover,
+.icon-arrow-right:hover {
+  filter: brightness(0.1);
 }

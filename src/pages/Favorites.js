@@ -223,7 +223,7 @@ const Favorites = ({
                 <br />
                 <br /> Commencer à ajouter des personnages dès maintenant
                 <span
-                  className="click linkHereBlack"
+                  className="click"
                   onClick={() => {
                     navigate("/characters");
                   }}
@@ -277,7 +277,7 @@ const Favorites = ({
               />
             </div>
             <div className="nocharyetBlock">
-              PROCHAINEMENT
+              PROCHAINEMENT...
               <br />
               <br /> Ajout de Comics en favoris
             </div>

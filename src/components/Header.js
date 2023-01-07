@@ -1,8 +1,9 @@
 //Images
 import logout from "../assets/images/logout.svg";
 import logomarvel from "../assets/images/logomarvel.png";
+import Burger from "../assets/images/burger-menu-svgrepo-com.svg";
 //React
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 //Packages
 import toast from "react-hot-toast";
 //import utils
@@ -20,10 +21,18 @@ const Header = ({
   colorItemJoin,
 }) => {
   //
-
+  const navigate = useNavigate();
   //
   return (
     <div className="header-desktopNav">
+      <div
+        className="burgerResponsive click"
+        onClick={() => {
+          navigate("/signin");
+        }}
+      >
+        <img src={Burger} className="burgerResponsiveIcon" alt="burger-menu" />
+      </div>
       <div className="header-container-user">
         {!userToken ? (
           <>
@@ -38,6 +47,7 @@ const Header = ({
               </div>
             </Link>
             <div className="header-split">|</div>
+
             <Link className="Btn-Link" to="/join">
               <div
                 className="header-join"
@@ -51,7 +61,7 @@ const Header = ({
           </>
         ) : (
           <div
-            className="logout-style"
+            className="logout-style BordGreen"
             onClick={() => {
               handleToken();
               toast.success(`Vous êtes déconnecté.`, {
@@ -74,7 +84,7 @@ const Header = ({
         </Link>
       </div>
 
-      <div className="header-desktopNav-bottom">
+      <div className="header-desktopNav-bottom BordRed">
         <Link
           to="/characters"
           className="Btn-Link Link-Menu-Style"

@@ -29,28 +29,25 @@
 .favTitle {
   padding: 12px;
   font-weight: bold;
-  font-size: 28px;
-  margin-bottom: 20px;
-  margin-right: 70px;
+  font-size: 26px;
+  margin: 0 auto 20px;
 }
 .favCharacter,
 .favComics {
-  width: 400px;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   padding: 15px;
   gap: 3px;
 }
 .infoFav {
-  flex: 0.95;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   height: 40px;
-  width: 100%;
+  width: 250px;
   padding: 10px;
 }
 .removeFav,
@@ -143,9 +140,7 @@
   margin-left: 5px;
   text-decoration: underline;
 }
-.linkHereBlack:hover {
-  color: #191919;
-}
+
 .whiteAngleInNOFav1 {
   position: absolute;
   right: 95%;
