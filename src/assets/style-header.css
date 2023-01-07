@@ -60,7 +60,7 @@
   justify-content: center;
   border-bottom: solid 1px #e6232a;
   height: 50px;
-  width: 100%;
+  width: auto;
   background-color: #202020;
 }
 .header-desktopNav-top img {
@@ -71,7 +71,7 @@
 }
 .header-desktopNav-bottom {
   display: flex;
-  width: 100%;
+  width: auto;
   height: 40px;
   gap: 10px;
   background-color: #202020;
