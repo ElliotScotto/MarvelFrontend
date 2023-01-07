@@ -8,8 +8,8 @@ import Results from "../components/Results";
 import Footer from "../components/Footer";
 import ComicCard from "../components/ComicCard";
 //
-const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
-const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
+// const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
+// const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
 const Comics = ({
   addFav,
@@ -50,7 +50,7 @@ const Comics = ({
           //Local
           // `${REACT_APP_BACKEND_ENDPOINT}/comics?apiKey=${REACT_APP_ELLIOT_APIKEY}&title=${comicTitle}&page=${page}`
           //Hebergement Northflank vv
-          `https://site--backend-marvel--cpx4vl465khg.code.run/comics?apiKey=${REACT_APP_ELLIOT_APIKEY}&title=${comicTitle}&page=${page}`
+          `https://site--backend-marvel--cpx4vl465khg.code.run/comics?title=${comicTitle}&page=${page}`
         );
 
         setData(response.data);

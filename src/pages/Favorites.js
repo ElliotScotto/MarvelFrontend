@@ -12,7 +12,7 @@ import NotSigned from "../components/NotSigned";
 import Loading from "../components/Loading";
 import FavCharacterLine from "../components/FavCharacterLine";
 //
-const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
+// const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
 const Favorites = ({
   userToken,

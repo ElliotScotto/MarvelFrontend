@@ -9,8 +9,8 @@ import SearchCharacter from "../components/SearchCharacter.js";
 import Results from "../components/Results.js";
 import Footer from "../components/Footer";
 //
-const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
-const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
+// const REACT_APP_ELLIOT_APIKEY = process.env.REACT_APP_ELLIOT_APIKEY;
+// const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
 const Characters = ({
   addFav,
@@ -58,7 +58,7 @@ const Characters = ({
           //local vv
           // `${REACT_APP_BACKEND_ENDPOINT}/characters?apiKey=${REACT_APP_ELLIOT_APIKEY}&name=${characterName}&page=${page}`
           // Hebergement Northflank vv
-          `https://site--backend-marvel--cpx4vl465khg.code.run/characters?apiKey=${REACT_APP_ELLIOT_APIKEY}&name=${characterName}&page=${page}`
+          `https://site--backend-marvel--cpx4vl465khg.code.run/characters?name=${characterName}&page=${page}`
         );
         setData(response.data);
         setIsLoading(false);

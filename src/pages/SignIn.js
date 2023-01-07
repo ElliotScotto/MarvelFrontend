@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 //
-const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
+// const REACT_APP_BACKEND_ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 //
 const SignIn = ({
   handleToken,
