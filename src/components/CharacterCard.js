@@ -21,7 +21,7 @@ export default function CharacterCard({
   setFavCharacterDescri,
   fav,
 }) {
-  const [characterIdDescri, setCharacterIdDescri] = useState();
+  const [characterIdDescri] = useState();
   console.log("CHARACTERCARD : characterIdDescri ===> ", characterIdDescri);
   const navigate = useNavigate();
   const userToken = Cookies.get("userToken");
