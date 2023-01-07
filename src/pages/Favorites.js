@@ -68,7 +68,13 @@ const Favorites = ({
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          `${REACT_APP_BACKEND_ENDPOINT}/favorites`,
+          //local vv
+          // `${REACT_APP_BACKEND_ENDPOINT}/favorites`,
+          // {
+          //   fav,
+          // }
+          // Hebergement Northflank vv
+          `https://site--backend-marvel--cpx4vl465khg.code.run/favorites`,
           {
             fav,
           }

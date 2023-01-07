@@ -47,8 +47,12 @@ const Comics = ({
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${REACT_APP_BACKEND_ENDPOINT}/comics?apiKey=${REACT_APP_ELLIOT_APIKEY}&title=${comicTitle}&page=${page}`
+          //Local
+          // `${REACT_APP_BACKEND_ENDPOINT}/comics?apiKey=${REACT_APP_ELLIOT_APIKEY}&title=${comicTitle}&page=${page}`
+          //Hebergement Northflank vv
+          `https://site--backend-marvel--cpx4vl465khg.code.run/comics?apiKey=${REACT_APP_ELLIOT_APIKEY}&title=${comicTitle}&page=${page}`
         );
+
         setData(response.data);
         setIsLoading(false);
         // console.log(response.data.results);

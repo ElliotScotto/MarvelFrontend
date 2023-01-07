@@ -54,7 +54,10 @@ const CharacterId = ({
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/character/${params.characterId}`
+          //local vv
+          // `http://localhost:4000/character/${params.characterId}`
+          //Northflank vv
+          `https://site--backend-marvel--cpx4vl465khg.code.run/character/${params.characterId}`
         );
         // console.log(params.characterId); //id de chaque personnage
         setData(response.data);

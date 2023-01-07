@@ -49,12 +49,16 @@ const Characters = ({
     handleStyle();
   });
   //
+  //site--backend-marvel--cpx4vl465khg.code.run/
   //
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${REACT_APP_BACKEND_ENDPOINT}/characters?apiKey=${REACT_APP_ELLIOT_APIKEY}&name=${characterName}&page=${page}`
+          //local vv
+          // `${REACT_APP_BACKEND_ENDPOINT}/characters?apiKey=${REACT_APP_ELLIOT_APIKEY}&name=${characterName}&page=${page}`
+          // Hebergement Northflank vv
+          `https://site--backend-marvel--cpx4vl465khg.code.run/characters?apiKey=${REACT_APP_ELLIOT_APIKEY}&name=${characterName}&page=${page}`
         );
         setData(response.data);
         setIsLoading(false);
