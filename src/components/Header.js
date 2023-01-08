@@ -6,7 +6,7 @@ import Burger from "../assets/images/burger-menu-svgrepo-com.svg";
 import { Link, useNavigate } from "react-router-dom";
 //Packages
 import toast from "react-hot-toast";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 //import utils
 // import NavStyle from "../utils/NavStyle";
 const Header = ({

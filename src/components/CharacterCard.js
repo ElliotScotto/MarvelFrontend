@@ -1,7 +1,7 @@
 import chevronDown from "../assets/images/chevron-down.svg";
 import userPlus from "../assets/images/user-plus.svg";
 import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
-import { useState } from "react";
+// import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //import packages
 import Cookies from "js-cookie";
@@ -21,7 +21,7 @@ export default function CharacterCard({
   setFavCharacterDescri,
   fav,
 }) {
-  const [characterIdDescri] = useState();
+  // const [characterIdDescri] = useState();
   // console.log("CHARACTERCARD : characterIdDescri ===> ", characterIdDescri);
   const navigate = useNavigate();
   const userToken = Cookies.get("userToken");
