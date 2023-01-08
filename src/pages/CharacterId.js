@@ -91,7 +91,7 @@ const CharacterId = ({
               )}
             </div>
             <div className="character-all-comics">
-              <div className="characterIdApparitionTitle">Apparition(s)</div>
+              <div className="characterIdApparitionTitle">Apparition</div>
               <div className="CharacterIdViews">
                 <div className="displayApparitionsinCharacterId">
                   <div>

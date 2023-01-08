@@ -188,7 +188,7 @@ function App() {
   //
   return (
     <>
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-left" reverseOrder={false} />
       <Router>
         <Header
           handleToken={handleToken}

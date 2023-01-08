@@ -94,7 +94,8 @@ const SignIn = ({
     <div className="claws">
       <div className="signin-container">
         <span>
-          Créer un compte vous donnera accès à votre liste de favoris...
+          Créer un compte vous permettra d'ajouter des personnages en favoris,
+          les supprimer...
         </span>
         <div className="signin-title">
           <h1>Sign In</h1>
