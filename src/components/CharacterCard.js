@@ -22,7 +22,7 @@ export default function CharacterCard({
   fav,
 }) {
   const [characterIdDescri] = useState();
-  console.log("CHARACTERCARD : characterIdDescri ===> ", characterIdDescri);
+  // console.log("CHARACTERCARD : characterIdDescri ===> ", characterIdDescri);
   const navigate = useNavigate();
   const userToken = Cookies.get("userToken");
   //
@@ -97,7 +97,7 @@ export default function CharacterCard({
                           {toast.error(
                             "Vous avez déjà 10 personnages dans votre liste !",
                             {
-                              duration: 4000,
+                              duration: 3000,
                               style: { fontSize: 18 },
                             }
                           )}

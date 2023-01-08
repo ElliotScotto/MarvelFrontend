@@ -6,6 +6,7 @@ import Burger from "../assets/images/burger-menu-svgrepo-com.svg";
 import { Link, useNavigate } from "react-router-dom";
 //Packages
 import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 //import utils
 // import NavStyle from "../utils/NavStyle";
 const Header = ({
@@ -22,17 +23,38 @@ const Header = ({
 }) => {
   //
   const navigate = useNavigate();
+  console.log("HEADER : userToken  ======> ", userToken);
   //
   return (
     <div className="header-desktopNav">
-      <div
-        className="burgerResponsive click"
-        onClick={() => {
-          navigate("/signin");
-        }}
-      >
-        <img src={Burger} className="burgerResponsiveIcon" alt="burger-menu" />
-      </div>
+      {!userToken ? (
+        <div
+          className="burgerResponsive click visibleBurger"
+          onClick={() => {
+            navigate("/signin");
+          }}
+        >
+          <img
+            src={Burger}
+            className="burgerResponsiveIcon"
+            alt="burger-menu"
+          />
+        </div>
+      ) : (
+        <div
+          className="burgerResponsive click invisibleBurger"
+          onClick={() => {
+            navigate("/signin");
+          }}
+        >
+          <img
+            src={Burger}
+            className="burgerResponsiveIcon"
+            alt="burger-menu"
+          />
+        </div>
+      )}
+
       <div className="header-container-user">
         {!userToken ? (
           <>
@@ -65,7 +87,7 @@ const Header = ({
             onClick={() => {
               handleToken();
               toast.success(`Vous êtes déconnecté.`, {
-                duration: 4000,
+                duration: 2000,
                 style: { fontSize: 18 },
               });
             }}

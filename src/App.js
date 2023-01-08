@@ -51,7 +51,7 @@ function App() {
     (cookie3 && JSON.parse(cookie3)) || [[], []]
   );
 
-  //
+  //Cookie User Connexion
   //
   const handleToken = (token) => {
     if (token) {
@@ -97,7 +97,7 @@ function App() {
         });
       } else {
         toast.error("Déjà en favoris !", {
-          duration: 4000,
+          duration: 3000,
           style: { fontSize: 18 },
         });
       }
@@ -109,7 +109,7 @@ function App() {
       });
     } else {
       toast.error("Déjà en favoris !", {
-        duration: 4000,
+        duration: 3000,
         style: { fontSize: 18 },
       });
     }
@@ -188,7 +188,7 @@ function App() {
   //
   return (
     <>
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       <Router>
         <Header
           handleToken={handleToken}

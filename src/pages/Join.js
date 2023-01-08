@@ -65,12 +65,12 @@ const Join = ({
         handleToken(response.data.token);
         if (response.data.token) {
           toast.success(`Bon retour parmi nous ${response.data.username} !`, {
-            duration: 4000,
+            duration: 2000,
           });
           navigate("/characters");
         } else {
           toast.error("Etes-vous bien inscrit ?", {
-            duration: 5000,
+            duration: 3000,
             style: { fontSize: 18 },
           });
         }
@@ -79,7 +79,7 @@ const Join = ({
       }
     } else {
       toast.error("Votre mot de passe doit contenir 8 caractères minimum.", {
-        duration: 5000,
+        duration: 4000,
         style: { fontSize: 18 },
       });
     }
