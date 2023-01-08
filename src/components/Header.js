@@ -83,7 +83,7 @@ const Header = ({
           </>
         ) : (
           <div
-            className="logout-style BordGreen"
+            className="logout-style"
             onClick={() => {
               handleToken();
               toast.success(`Vous êtes déconnecté.`, {

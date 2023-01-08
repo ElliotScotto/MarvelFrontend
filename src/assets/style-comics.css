@@ -1,12 +1,15 @@
 /*
 /* COMICS */
 .comics-main-container {
-  width: 1100px;
   height: 5000px;
   margin: 0 auto;
   /* border: solid 1px green; */
   height: fit-content;
   padding-bottom: 20px;
+  /* Phone */
+  width: auto;
+  /* Desktop */
+  max-width: 1100px;
 }
 .characters-all-comics {
   box-sizing: border-box;

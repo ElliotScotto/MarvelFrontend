@@ -76,7 +76,7 @@ export default function CharacterCard({
                             "cDescrip.length ==== > ",
                             cDescrip.length
                           )}
-                          {cDescrip.length > 2 ? (
+                          {/* {cDescrip.length > 2 ? (
                             navigate("/favorites", {
                               state: { characterIdDescri: cDescrip },
                             })
@@ -89,7 +89,7 @@ export default function CharacterCard({
                                 },
                               })}
                             </>
-                          )}
+                          )} */}
                           ;
                         </>
                       ) : (
@@ -104,7 +104,7 @@ export default function CharacterCard({
                         </>
                       )
                     ) : (
-                      navigate("/signin")
+                      navigate("/favorites")
                     );
                   }}
                 />

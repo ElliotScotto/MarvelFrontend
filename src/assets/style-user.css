@@ -5,7 +5,7 @@
   box-sizing: border-box;
   /* border: solid 1px black; */
   margin: 5vh auto;
-  width: 50vw;
+  width: 85vw;
   max-width: 500px;
   height: fit-content;
   display: flex;
@@ -87,6 +87,7 @@
   display: flex;
   justify-content: center;
   color: #e6232a;
+  font-size: 18px;
 }
 .alreadysigned p:hover {
   border-bottom: solid 1px #e6232a;
