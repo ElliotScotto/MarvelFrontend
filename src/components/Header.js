@@ -106,7 +106,7 @@ const Header = ({
         </Link>
       </div>
 
-      <div className="header-desktopNav-bottom BordRed">
+      <div className="header-desktopNav-bottom">
         <Link
           to="/characters"
           className="Btn-Link Link-Menu-Style"

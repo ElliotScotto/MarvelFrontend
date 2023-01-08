@@ -179,7 +179,6 @@ body {
   position: relative;
   background-color: #151515;
 }
-
 .characters-card-bottom-animation {
   position: absolute;
   transition: all 0.1s linear 0s;
@@ -219,9 +218,12 @@ body {
 .icon-chevron-down {
   height: 15px;
   width: 15px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 .nameCharacter {
-  margin: 3px 7px 3px 7px;
+  margin: 3px 22px 3px 7px;
   font-size: 20px;
   color: white;
 }

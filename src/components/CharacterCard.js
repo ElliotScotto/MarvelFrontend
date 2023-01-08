@@ -111,7 +111,7 @@ export default function CharacterCard({
               </p>
 
               <img
-                className="icon-arrow-right"
+                className="icon-chevron-down"
                 src={chevronDown}
                 alt="icon-chevron-down"
               />

@@ -1,7 +1,6 @@
 /*
 /* HEADER */
 .header-desktopNav {
-  width: auto;
   background-color: #202020;
   margin-bottom: 30px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -111,9 +110,7 @@
   display: flex;
   justify-content: center;
   height: 40px;
-  width: 100%;
   gap: 10px;
-  background-color: #202020;
 }
 
 .header-desktopNav-bottom-link {
