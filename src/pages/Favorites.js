@@ -101,7 +101,9 @@ const Favorites = ({
           elem.length > 0 || fav[0][0] ? (
             <div key={index} className="containerFavCharacters">
               <div className="relative">
-                <p className="favTitle">Personnage(s) favori(s)</p>
+                <p className="favTitle">
+                  {fav[0].length} Personnage(s) favori(s)
+                </p>
               </div>
 
               <div className="FavDisplay">

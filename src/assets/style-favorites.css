@@ -82,13 +82,13 @@
 }
 .whiteAngleInFav1 {
   position: absolute;
-  bottom: 56%;
-  right: 94%;
+  bottom: 65%;
+  right: 95%;
   transform: rotate(195deg);
 }
 .whiteAngleInFav2 {
   position: absolute;
-  top: 56%;
+  top: 65%;
   left: 95%;
   transform: rotate(15deg);
 }
