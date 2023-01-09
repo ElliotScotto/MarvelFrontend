@@ -105,6 +105,13 @@
   gap: 5px;
   margin-left: 10px;
 }
+.seeHisComics {
+  margin: 10px 0px 0px 10px;
+  text-decoration: underline;
+}
+.seeHisComics:hover {
+  color: #e6232a;
+}
 .CharacterIdViews span {
   font-size: 22px;
 }
@@ -122,4 +129,36 @@
   margin-left: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.containerLinkBackCharacters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 50px;
+}
+.chevronRedBack {
+  display: flex;
+}
+.absoluteChevronBack {
+  position: absolute;
+  left: 6px;
+}
+.chevronRedBackIcon {
+  display: flex;
+}
+.chevronRedBackIcon {
+  height: 15px;
+  width: 15px;
+  transform: rotate(90deg);
+  margin-top: 5px;
+}
+
+.backToCharactersPage {
+  margin-top: 3px;
+}
+.backToCharactersPage p {
+  color: #e6232a;
+  font-size: 18px;
+  display: flex;
+  text-decoration: underline;
 }

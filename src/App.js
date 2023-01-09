@@ -6,6 +6,8 @@ import "./assets/style-favorites.css";
 import "./assets/footer.css";
 import "./assets/style-comics.css";
 import "./assets/style-characterId.css";
+import "./assets/style-characters.css";
+import "./assets/style-comicsbyCharacterId.css";
 //
 //import fonctions React
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -268,7 +270,20 @@ function App() {
           />
           <Route
             path="/comics/:characterId"
-            element={<ComicsByCharacterId />}
+            element={
+              <ComicsByCharacterId
+                handleHeader={handleHeader}
+                setColorItemChar={setColorItemChar}
+                setBorderItemChar={setBorderItemChar}
+                setColorItemComics={setColorItemComics}
+                setBorderItemComics={setBorderItemComics}
+                setColorItemFav={setColorItemFav}
+                setBorderItemFav={setBorderItemFav}
+                setColorItemSignIn={setColorItemSignIn}
+                setColorItemJoin={setColorItemJoin}
+                favCharacterDescri={favCharacterDescri}
+              />
+            }
           />
 
           <Route

@@ -2,13 +2,14 @@
 import React, { useState, useEffect } from "react";
 //Navigation
 import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 //import packages
 import axios from "axios";
 //import components
 import Loading from "../components/Loading";
 //import images
 import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
+import chevronDown from "../assets/images/chevron-down.svg";
 //
 //
 const CharacterId = ({
@@ -26,6 +27,7 @@ const CharacterId = ({
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
+  const navigate = useNavigate();
   console.log("CHARACTERID : characterIdDescri ===> ", characterIdDescri);
   console.log(
     "CHARACTERID : location.state.characterIdDescri ===> ",
@@ -99,7 +101,17 @@ const CharacterId = ({
                   </div>
                   <div>comics</div>
                 </div>
-                <div className="comicsList">
+                <div
+                  onClick={() => {
+                    navigate(`/comics/${params.characterId}`, {
+                      state: { characterId: params.characterId },
+                    });
+                  }}
+                >
+                  <p className="seeHisComics click">Voir la liste</p>
+                </div>
+                {/* liste des Id Comics ci-dessous */}
+                {/* <div className="comicsList">
                   {data.comics.map((comic, index) => {
                     return (
                       <div key={index}>
@@ -111,7 +123,32 @@ const CharacterId = ({
                       </div>
                     );
                   })}
+                </div> */}
+              </div>
+            </div>
+            <div
+              className="containerLinkBackCharacters"
+              onClick={() => {
+                navigate("/characters");
+              }}
+            >
+              <div className="chevronRedBack relative">
+                <img
+                  src={chevronDown}
+                  alt="chevronRedBack"
+                  className="chevronRedBackIcon"
+                />
+                <div className="chevronRedBack absoluteChevronBack">
+                  <img
+                    src={chevronDown}
+                    alt="chevronRedBack"
+                    className="chevronRedBackIcon"
+                  />
                 </div>
+              </div>
+
+              <div className="backToCharactersPage click">
+                <p>&nbsp;&nbsp;Tous les personnages</p>
               </div>
             </div>
           </div>
