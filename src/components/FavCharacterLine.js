@@ -22,7 +22,9 @@ export default function FavCharacterLine({
       {/* <div
         className="click charInfo"
         onClick={() => {
-          navigate(`/character/${fav}`);
+          navigate(`/character/${fav}`, {
+            state: { favCharacter: favCharacter },
+          });
         }}
       >
         <img

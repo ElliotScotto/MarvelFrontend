@@ -6,7 +6,7 @@
   box-sizing: border-box;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 50px;
   /* border: solid 1px blue; */
   padding-top: 10px;
   padding-left: 10px;
@@ -24,7 +24,6 @@
 .FavDisplay {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 .favTitle {
   padding: 12px;
@@ -65,8 +64,8 @@
   right: 5px;
 }
 .removeFavIcon {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
 }
 .charInfoIcon {
   height: 20px;

@@ -120,7 +120,6 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][1]}
                     favCharacter={favCharacter[0][1]}
-                    favCharacterDescri={favCharacterDescri[0][1]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -130,7 +129,6 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][2]}
                     favCharacter={favCharacter[0][2]}
-                    favCharacterDescri={favCharacterDescri[0][2]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -140,7 +138,6 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][3]}
                     favCharacter={favCharacter[0][3]}
-                    favCharacterDescri={favCharacterDescri[0][3]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -150,7 +147,6 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][4]}
                     favCharacter={favCharacter[0][4]}
-                    favCharacterDescri={favCharacterDescri[0][4]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -160,7 +156,6 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][5]}
                     favCharacter={favCharacter[0][5]}
-                    favCharacterDescri={favCharacterDescri[0][5]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -170,7 +165,6 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][6]}
                     favCharacter={favCharacter[0][6]}
-                    favCharacterDescri={favCharacterDescri[0][6]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -180,7 +174,6 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][7]}
                     favCharacter={favCharacter[0][7]}
-                    favCharacterDescri={favCharacterDescri[0][7]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -190,7 +183,6 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][8]}
                     favCharacter={favCharacter[0][8]}
-                    favCharacterDescri={favCharacterDescri[0][8]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -200,7 +192,6 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][9]}
                     favCharacter={favCharacter[0][9]}
-                    favCharacterDescri={favCharacterDescri[0][9]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
