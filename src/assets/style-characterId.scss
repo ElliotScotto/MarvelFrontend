@@ -7,7 +7,42 @@
   width: auto;
   border: #e6232a solid 2px;
 }
-@media (max-width: 730px) {
+//
+//Responsive
+@media (min-width: 1184px) {
+  .littleRedBar {
+    height: 30px;
+    border-right: #e6232a solid 2px;
+    position: absolute;
+    top: -4.5%;
+    left: 40%;
+  }
+}
+@media (max-width: 490px) {
+  .characterIdDescrip,
+  .responsiveInfoCharID {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+  .containerLinkBackCharacters {
+    border-bottom: #e6232a solid 2px;
+  }
+}
+@media (min-width: 491px) {
+  .displayApparitionsinCharacterId {
+    width: 30vw;
+  }
+  .characterIdDescrip,
+  .responsiveInfoCharID {
+    max-width: 50%;
+  }
+  .characterId-image {
+    width: 65vw;
+    max-width: 50%;
+  }
+}
+@media (max-width: 490px) {
   .hidePrimaryBorder {
     border-left: white solid;
     border-width: 10px;
@@ -48,15 +83,8 @@
 .hideSecondaryBorder {
   width: 100%;
 }
-@media (min-width: 1184px) {
-  .littleRedBar {
-    height: 30px;
-    border-right: #e6232a solid 2px;
-    position: absolute;
-    top: -4.5%;
-    left: 40%;
-  }
-}
+//
+//
 .infos-character-container {
   display: flex;
   flex-direction: column;
@@ -68,30 +96,7 @@
   display: flex;
   justify-content: space-between;
 }
-@media (max-width: 730px) {
-  .characterIdDescrip,
-  .responsiveInfoCharID {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-  }
-  .containerLinkBackCharacters {
-    border-bottom: #e6232a solid 2px;
-  }
-}
-@media (min-width: 731px) {
-  .displayApparitionsinCharacterId {
-    width: 30vw;
-  }
-  .characterIdDescrip,
-  .responsiveInfoCharID {
-    max-width: 50%;
-  }
-  .characterId-image {
-    width: 65vw;
-    max-width: 50%;
-  }
-}
+
 .characterIdDescrip {
   font-size: 18px;
   width: auto;
