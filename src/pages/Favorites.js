@@ -19,7 +19,6 @@ const Favorites = ({
   fav,
   favCharacter,
   favCharacterDescri,
-  setFavCharacterDescri,
   RemoveFav,
   RemoveFavCharacter,
   RemoveFavCharacterDescri,

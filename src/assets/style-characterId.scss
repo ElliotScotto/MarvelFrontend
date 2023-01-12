@@ -201,6 +201,28 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+//AddFav
+.addFavFromCharacterById {
+  background-color: #e6232a;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: white;
+}
+.addFavFromCharacterById:hover {
+  background-color: #e65656;
+}
+.iconAddCharIdinCharbyId {
+  display: flex;
+  height: 20px;
+  width: 20px;
+}
+//Link to All Characters Page
 .containerLinkBackCharacters {
   display: flex;
   align-items: center;

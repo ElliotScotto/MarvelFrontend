@@ -2,6 +2,7 @@
 import chevronDown from "../assets/images/chevron-down.svg";
 import userPlus from "../assets/images/user-plus.svg";
 import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
+//React
 import { useNavigate } from "react-router-dom";
 //import packages
 import Cookies from "js-cookie";
@@ -17,7 +18,6 @@ export default function CharacterCard({
   data,
   addFav,
   addFavCharacter,
-  addFavDescri,
   setFavCharacterDescri,
   fav,
 }) {
@@ -67,14 +67,7 @@ export default function CharacterCard({
                       fav[0].length < 10 ? (
                         <>
                           {addFav(data._id, "character")};
-                          {addFavCharacter(cName)}
-                          {addFavDescri(cDescrip)}
-                          {console.log("cDescrip ==== > ", cDescrip)};
-                          {console.log(
-                            "cDescrip.length ==== > ",
-                            cDescrip.length
-                          )}
-                          ;
+                          {addFavCharacter(cName)};
                         </>
                       ) : (
                         <>

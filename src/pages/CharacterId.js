@@ -5,11 +5,14 @@ import { useParams } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 //import packages
 import axios from "axios";
+import Cookies from "js-cookie";
+import toast from "react-hot-toast";
 //import components
 import Loading from "../components/Loading";
 //import images
 import whiteTriangle from "../assets/images/triangle-svgrepo-com.svg";
 import chevronDown from "../assets/images/chevron-down.svg";
+import userPlus from "../assets/images/user-plus.svg";
 //
 //
 const CharacterId = ({
@@ -21,8 +24,10 @@ const CharacterId = ({
   setBorderItemFav,
   setColorItemSignIn,
   setColorItemJoin,
-  favCharacterDescri,
   characterIdDescri,
+  fav,
+  addFav,
+  addFavCharacter,
 }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -33,9 +38,9 @@ const CharacterId = ({
     "CHARACTERID : location.state.characterIdDescri ===> ",
     location.state.characterIdDescri
   );
-  // const [comicsTitle, setComicsTitle] = useState("");
   const params = useParams();
   //
+  const userToken = Cookies.get("userToken");
   //
   useEffect(() => {
     const handleStyle = () => {
@@ -116,6 +121,40 @@ const CharacterId = ({
                   <p className="seeHisComics click">Voir la liste</p>
                 </div>
               </div>
+            </div>
+            <div
+              className="addFavFromCharacterById  click"
+              onClick={() => {
+                userToken ? (
+                  fav[0].length < 10 ? (
+                    <>
+                      {addFav(params.characterId, "character")};
+                      {addFavCharacter(data.name)};
+                    </>
+                  ) : (
+                    <>
+                      {toast.error(
+                        "Vous avez déjà 10 personnages dans votre liste !",
+                        {
+                          duration: 3000,
+                          style: { fontSize: 18 },
+                        }
+                      )}
+                    </>
+                  )
+                ) : (
+                  navigate("/favorites")
+                );
+              }}
+            >
+              <div>
+                <img
+                  className="iconAddCharIdinCharbyId"
+                  alt="icon-user-add-fav-black"
+                  src={userPlus}
+                />
+              </div>
+              <div>Ajouter aux Favoris</div>
             </div>
             <div
               className="containerLinkBackCharacters"

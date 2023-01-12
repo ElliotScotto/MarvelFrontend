@@ -300,6 +300,10 @@ function App() {
                 setColorItemSignIn={setColorItemSignIn}
                 setColorItemJoin={setColorItemJoin}
                 favCharacterDescri={favCharacterDescri}
+                fav={fav}
+                addFav={addFav}
+                addFavCharacter={addFavCharacter}
+                addFavDescri={addFavDescri}
               />
             }
           />
