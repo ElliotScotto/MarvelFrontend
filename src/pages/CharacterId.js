@@ -145,6 +145,7 @@ const CharacterId = ({
           </div>
           <div className="characterId-image relative">
             <div className="hideSecondaryBorder"></div>
+            <div className="hideThirdBorder"></div>
             <div className="nameCharacterId relative">
               <p>{data.name}</p>
               <div className="whiteAngleInCharId">

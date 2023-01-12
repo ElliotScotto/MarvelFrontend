@@ -20,10 +20,21 @@
     background-color: white;
     height: 10px;
     min-width: 28%;
-    max-width: 25vw;
+    max-width: 55%;
     position: absolute;
     top: -4px;
-    left: -190px;
+    left: -250px;
+    overflow: hidden;
+    margin-right: auto;
+  }
+  .hideThirdBorder {
+    background-color: white;
+    height: 10px;
+    min-width: 52.8%;
+    max-width: 55%;
+    position: absolute;
+    top: 98%;
+    left: -251px;
     overflow: hidden;
     margin-right: auto;
   }
