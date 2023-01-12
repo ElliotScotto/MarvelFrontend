@@ -11,11 +11,11 @@
 //Responsive
 @media (min-width: 1184px) {
   .littleRedBar {
-    height: 30px;
+    height: 31px;
     border-right: #e6232a solid 2px;
     position: absolute;
-    top: -4.5%;
-    left: 40%;
+    top: -5%;
+    left: 475px;
   }
 }
 @media (max-width: 490px) {
@@ -125,6 +125,7 @@
   width: auto;
   object-fit: cover;
   margin-left: 10px;
+  margin-bottom: -3px;
 }
 .nameCharacterId {
   font-size: 28px;
@@ -204,11 +205,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 50px;
+  padding-top: 35px;
   padding-left: 10px;
-  width: 100%;
+  width: 110%;
   background-color: white;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 .chevronRedBack {
   display: flex;
