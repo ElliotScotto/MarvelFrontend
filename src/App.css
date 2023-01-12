@@ -15,9 +15,7 @@ body {
 .relative {
   position: relative;
 }
-.absolute {
-  position: absolute;
-}
+
 .BordBlack {
   border: solid 1px black;
 }

@@ -78,7 +78,6 @@ const Characters = ({
         characterName={characterName}
         setCharacterName={setCharacterName}
       />
-
       <div className="characters-main-container">
         <Results totalCount={data.count} />
         <div className="characters-all-cards">

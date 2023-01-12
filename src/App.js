@@ -5,8 +5,8 @@ import "./assets/style-user.css";
 import "./assets/style-favorites.css";
 import "./assets/footer.css";
 import "./assets/style-comics.css";
-import "./assets/style-characterId.css";
-import "./assets/style-characters.css";
+import "./assets/style-characterId.scss";
+import "./assets/style-characters.scss";
 import "./assets/style-comicsbyCharacterId.css";
 //
 //import fonctions React

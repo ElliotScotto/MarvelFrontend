@@ -76,13 +76,17 @@ const CharacterId = ({
   return isLoading ? (
     <Loading />
   ) : (
-    <div className="characterId-all-comics" key={params.characterId}>
-      {/* <div className="RedBar"></div> */}
+    <div className="characterId-all-comics relative" key={params.characterId}>
+      {/* <div className="littleRedBar"></div> */}
+
+      <div className="hidePrimaryBorder"></div>
+
       <div className="infos-character-container">
         <div className="containerCharIdImageAndDescrip">
-          <div className="characterIdDescrip">
+          <div className="characterIdDescrip relative responsiveInfoCharID">
+            <div className="thirdBorder"></div>
             <div className="characterIdDescripTitle">Description</div>
-            <div>
+            <div className="DescriByID">
               {location.state.characterIdDescri ? (
                 <p>{location.state.characterIdDescri}</p>
               ) : (
@@ -92,7 +96,8 @@ const CharacterId = ({
                 </p>
               )}
             </div>
-            <div className="character-all-comics">
+            <div></div>
+            <div className="character-all-comics BGMarvelBlack">
               <div className="characterIdApparitionTitle">Apparition</div>
               <div className="CharacterIdViews">
                 <div className="displayApparitionsinCharacterId">
@@ -110,20 +115,6 @@ const CharacterId = ({
                 >
                   <p className="seeHisComics click">Voir la liste</p>
                 </div>
-                {/* liste des Id Comics ci-dessous */}
-                {/* <div className="comicsList">
-                  {data.comics.map((comic, index) => {
-                    return (
-                      <div key={index}>
-                        <div className="comicsList">
-                          <div className="comicTitle" key={index}>
-                            {comic}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div> */}
               </div>
             </div>
             <div
@@ -153,6 +144,7 @@ const CharacterId = ({
             </div>
           </div>
           <div className="characterId-image relative">
+            <div className="hideSecondaryBorder"></div>
             <div className="nameCharacterId relative">
               <p>{data.name}</p>
               <div className="whiteAngleInCharId">

@@ -6,11 +6,39 @@
   max-width: 1184px;
   width: auto;
   border: #e6232a solid 2px;
-  padding-bottom: 20px;
-  position: relative;
+}
+@media (max-width: 730px) {
+  .hidePrimaryBorder {
+    border-left: white solid;
+    border-width: 10px;
+    height: 101%;
+    position: absolute;
+    left: -2px;
+    top: -1%;
+  }
+  .hideSecondaryBorder {
+    background-color: white;
+    height: 10px;
+    min-width: 28%;
+    max-width: 25vw;
+    position: absolute;
+    top: -4px;
+    left: -190px;
+    overflow: hidden;
+    margin-right: auto;
+  }
+  .thirdBorder {
+    border-left: #e6232a solid 2px;
+    height: 100%;
+    position: absolute;
+    left: -2px;
+  }
+}
+.hideSecondaryBorder {
+  width: 100%;
 }
 @media (min-width: 1184px) {
-  .RedBar {
+  .littleRedBar {
     height: 30px;
     border-right: #e6232a solid 2px;
     position: absolute;
@@ -18,55 +46,84 @@
     left: 40%;
   }
 }
-
 .infos-character-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  margin: 0 10px 0 10px;
+  margin: 0 10px 0 0px;
 }
 .containerCharIdImageAndDescrip {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
+}
+@media (max-width: 730px) {
+  .characterIdDescrip,
+  .responsiveInfoCharID {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+  .containerLinkBackCharacters {
+    border-bottom: #e6232a solid 2px;
+  }
+}
+@media (min-width: 731px) {
+  .displayApparitionsinCharacterId {
+    width: 30vw;
+  }
+  .characterIdDescrip,
+  .responsiveInfoCharID {
+    max-width: 50%;
+  }
+  .characterId-image {
+    width: 65vw;
+    max-width: 50%;
+  }
 }
 .characterIdDescrip {
-  /* border: green solid 1px; */
-  font-size: 22px;
-  width: 40%;
+  font-size: 18px;
+  width: auto;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  margin-top: 10px;
   line-height: 26px;
+}
+.characterIdDescripTitle {
+  padding-top: 20px;
+}
+.characterIdApparitionTitle {
+  padding-top: 10px;
 }
 .characterIdDescripTitle,
 .characterIdApparitionTitle {
   font-size: 26px;
-  margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 15px;
 }
+.DescriByID {
+  margin-left: 10px;
+}
+
 .characterId-image {
-  display: flex;
-  width: 60%;
+  width: auto;
+  object-fit: cover;
+  margin-left: 10px;
 }
 .nameCharacterId {
-  font-size: 32px;
+  font-size: 28px;
   width: fit-content;
   position: absolute;
   top: 0px;
   left: 0px;
   background-color: #e6232a;
-  padding: 20px;
+  padding: 15px;
   color: white;
-  box-shadow: rgba(0, 0, 0, 0.5) 4px 8px 4px;
+  box-shadow: rgba(0, 0, 0, 0.2) 4px 6px 4px;
 }
 .imageCharacterId {
   margin-left: 10px;
   width: 100%;
-  height: auto;
   object-fit: cover;
 }
 .whiteAngleInCharId {
@@ -80,14 +137,11 @@
   width: 30px;
 }
 .character-all-comics {
-  margin: 40px auto 0px 0px;
+  margin: 40px 0px 0px 10px;
   padding-top: 10px;
   padding-bottom: 20px;
   flex-direction: column;
-  /* border: #e6232a solid 1px; */
-  width: 100%;
-  background-color: #202020;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 2px;
+  // box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 2px;
 }
 .characterIdApparitionTitle {
   color: white;
@@ -97,7 +151,7 @@
   flex-direction: column;
   align-items: flex-start;
   font-size: 18px;
-  width: 100%;
+  width: auto;
   color: white;
 }
 .displayApparitionsinCharacterId {
@@ -123,7 +177,7 @@
   color: white;
   font-size: 16px;
   box-sizing: border-box;
-  width: 100%;
+  width: auto;
 }
 .comicTitle {
   margin-left: 10px;
@@ -134,7 +188,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 50px;
+  padding-top: 50px;
+  padding-left: 10px;
+  width: 100%;
+  background-color: white;
+  padding-bottom: 10px;
 }
 .chevronRedBack {
   display: flex;
