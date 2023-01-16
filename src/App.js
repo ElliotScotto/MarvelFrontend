@@ -11,6 +11,7 @@ import "./assets/style-comicsbyCharacterId.css";
 //
 //import fonctions React
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { useState } from "react";
 //
 //import packages
@@ -42,6 +43,7 @@ function App() {
   const [favComics, setFavComics] = useState([]);
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
   //Fav States
+
   let cookie = Cookies.get("fav");
   const [fav, setFav] = useState((cookie && JSON.parse(cookie)) || [[], []]);
   let cookie2 = Cookies.get("favChar");
@@ -52,7 +54,9 @@ function App() {
   const [favCharacterDescri, setFavCharacterDescri] = useState(
     (cookie3 && JSON.parse(cookie3)) || [[], []]
   );
+  //
 
+  //
   //Cookie User Connexion
   //
   const handleToken = (token) => {
@@ -67,12 +71,12 @@ function App() {
   //
   const handleHeader = (focus) => {
     Cookies.set("pageName", focus, { expires: 1 });
-    console.log("pageName ===> ", Cookies.get("pageName"));
+    console.log("APP : pageName ===> ", Cookies.get("pageName"));
     return focus;
   };
   //
   // FAVORIS
-  //Ajouter un Favoris
+  //AJOUTER
   //Nom de personnages
   const addFavCharacter = (name) => {
     let favCharacterCopy = [...favCharacter];
@@ -119,8 +123,8 @@ function App() {
     Cookies.set("fav", JSON.stringify(favCopy));
   };
   //
-  //Retirer un Favoris
-  //Retirer le nom du personnage
+  //SUPPRIMER
+  //SUPPRIMER le nom du personnage
   const RemoveFavCharacter = (name) => {
     const favChar = Cookies.get("favChar");
     const tabFavChar = favChar && JSON.parse(favChar);
@@ -141,7 +145,7 @@ function App() {
     setFavCharacter(newFavChar);
     Cookies.set("favChar", JSON.stringify(newFavChar));
   };
-  //Retirer la description du personnage
+  //Supprimer la description du personnage
   const RemoveFavCharacterDescri = (description) => {
     const favCharDescri = Cookies.get("favCharDescri");
     const tabFavCharDescri = favCharDescri && JSON.parse(favCharDescri);
@@ -162,7 +166,7 @@ function App() {
     setFavCharacterDescri(newFavCharDescri);
     Cookies.set("favCharDescri", JSON.stringify(newFavCharDescri));
   };
-  //Retirer l'Id du personnage
+  //Supprimer l'Id du personnage
   const RemoveFav = (id) => {
     const fav = Cookies.get("fav");
     const tabFav = fav && JSON.parse(fav);
@@ -224,6 +228,7 @@ function App() {
                 setColorItemSignIn={setColorItemSignIn}
                 setColorItemJoin={setColorItemJoin}
                 fav={fav}
+                cookie3={cookie3}
               />
             }
           />
@@ -246,6 +251,7 @@ function App() {
                 setColorItemSignIn={setColorItemSignIn}
                 setColorItemJoin={setColorItemJoin}
                 fav={fav}
+                cookie3={cookie3}
               />
             }
           />
@@ -304,6 +310,7 @@ function App() {
                 addFav={addFav}
                 addFavCharacter={addFavCharacter}
                 addFavDescri={addFavDescri}
+                cookie3={cookie3}
               />
             }
           />
@@ -362,6 +369,7 @@ function App() {
                 setBorderItemFav={setBorderItemFav}
                 setColorItemSignIn={setColorItemSignIn}
                 setColorItemJoin={setColorItemJoin}
+                cookie3={cookie3}
               />
             }
           />

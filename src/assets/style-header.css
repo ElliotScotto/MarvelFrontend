@@ -94,10 +94,12 @@
   cursor: pointer;
 }
 .header-quit {
-  background-color: #e6232a;
+  border: solid 1px #e6232a;
   color: white;
   padding: 5px;
-  border-radius: 3px;
+}
+.header-quit:hover {
+  background-color: #e6232a;
 }
 
 .logout-style img {

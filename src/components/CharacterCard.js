@@ -18,12 +18,14 @@ export default function CharacterCard({
   data,
   addFav,
   addFavCharacter,
+  addFavDescri,
   setFavCharacterDescri,
   fav,
 }) {
   // const [characterIdDescri] = useState();
-  // console.log("CHARACTERCARD : characterIdDescri ===> ", characterIdDescri);
+
   const navigate = useNavigate();
+  // const location = useLocation();
   const userToken = Cookies.get("userToken");
   //
   const imageCharacter = cTPath + "." + cTExt;
@@ -41,7 +43,6 @@ export default function CharacterCard({
                 navigate(`/character/${id}`, {
                   state: { characterIdDescri: cDescrip },
                 });
-                setFavCharacterDescri(cDescrip);
               }}
             >
               <img
@@ -67,7 +68,7 @@ export default function CharacterCard({
                       fav[0].length < 10 ? (
                         <>
                           {addFav(data._id, "character")};
-                          {addFavCharacter(cName)};
+                          {addFavCharacter(cName)};{addFavDescri(cDescrip)};
                         </>
                       ) : (
                         <>

@@ -44,44 +44,51 @@ const Join = ({
   //
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (password.length >= 8) {
-      try {
-        const response = await axios.post(
-          //local vv
-          // `${REACT_APP_BACKEND_ENDPOINT}/join`,
-          // {
-          //   email: email,
-          //   password: password,
-          // }
-          // Hebergement Northflank vv
-          `https://site--backend-marvel--cpx4vl465khg.code.run/join`,
-          {
-            email: email,
-            password: password,
-          }
-        );
-
-        console.log(response.data);
-        handleToken(response.data.token);
-        if (response.data.token) {
-          toast.success(`Bon retour parmi nous ${response.data.username} !`, {
-            duration: 2000,
-          });
-          navigate("/characters");
-        } else {
-          toast.error("Etes-vous bien inscrit ?", {
-            duration: 3000,
-            style: { fontSize: 18 },
-          });
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      toast.error("Votre mot de passe doit contenir 8 caractères minimum.", {
+    if (!email.includes("@")) {
+      toast.error("L'adresse email est invalide", {
         duration: 4000,
         style: { fontSize: 18 },
       });
+    } else {
+      if (password.length >= 8) {
+        try {
+          const response = await axios.post(
+            //local vv
+            // `${REACT_APP_BACKEND_ENDPOINT}/join`,
+            // {
+            //   email: email,
+            //   password: password,
+            // }
+            // Hebergement Northflank vv
+            `https://site--backend-marvel--cpx4vl465khg.code.run/join`,
+            {
+              email: email,
+              password: password,
+            }
+          );
+
+          console.log(response.data);
+          handleToken(response.data.token);
+          if (response.data.token) {
+            toast.success(`Bon retour parmi nous ${response.data.username} !`, {
+              duration: 2000,
+            });
+            navigate("/characters");
+          } else {
+            toast.error("Etes-vous bien inscrit ?", {
+              duration: 3000,
+              style: { fontSize: 18 },
+            });
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        toast.error("Votre mot de passe doit contenir 8 caractères minimum.", {
+          duration: 4000,
+          style: { fontSize: 18 },
+        });
+      }
     }
   };
   //

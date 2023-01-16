@@ -7,6 +7,7 @@ import userPlus from "../assets/images/user-plus.svg";
 import React, { useState, useEffect } from "react";
 //import packages
 import axios from "axios";
+import Cookies from "js-cookie";
 //import components
 import NotSigned from "../components/NotSigned";
 import Loading from "../components/Loading";
@@ -31,21 +32,12 @@ const Favorites = ({
   setBorderItemComics,
   setColorItemSignIn,
   setColorItemJoin,
+  cookie3,
 }) => {
   const navigate = useNavigate();
-  // const location = useLocation();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   //
-  // console.log(
-  //   "FAVORITES : location.state.characterIdDescri ===> ",
-  //   location.state.characterIdDescri
-  // );
-  // const [descripFav, setDescripFav] = useState(
-  //   location.state.characterIdDescri
-  // );
-  // console.log("FAVORITES : descripFav ===> ", descripFav);
-
   //
   useEffect(() => {
     const handleStyle = () => {
@@ -88,6 +80,20 @@ const Favorites = ({
     fetchData();
   }, [fav]);
   //
+  console.log("FAVORITES : favCharacterDescri =====> ", favCharacterDescri);
+  console.log(
+    "FAVORITES : favCharacterDescri[0] =====> ",
+    favCharacterDescri[0]
+  );
+  // console.log(
+  //   "FAVORITES : favCharacterDescri[0][0] =====> ",
+  //   favCharacterDescri[0][0]
+  // );
+  console.log(
+    "FAVORITES : Cookies.get(favCharDescri) ===> ",
+    Cookies.get("favCharDescri")
+  );
+
   //
   return !userToken ? (
     <NotSigned />
@@ -111,15 +117,18 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][0]}
                     favCharacter={favCharacter[0][0]}
+                    favCharacterDescri={favCharacterDescri[0][0]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
                   />
                 )}
+
                 {fav[0][1] && (
                   <FavCharacterLine
                     fav={fav[0][1]}
                     favCharacter={favCharacter[0][1]}
+                    favCharacterDescri={favCharacterDescri[0][1]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -129,6 +138,7 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][2]}
                     favCharacter={favCharacter[0][2]}
+                    favCharacterDescri={favCharacterDescri[0][2]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -138,6 +148,7 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][3]}
                     favCharacter={favCharacter[0][3]}
+                    favCharacterDescri={favCharacterDescri[0][3]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -147,6 +158,7 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][4]}
                     favCharacter={favCharacter[0][4]}
+                    favCharacterDescri={favCharacterDescri[0][4]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -156,6 +168,7 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][5]}
                     favCharacter={favCharacter[0][5]}
+                    favCharacterDescri={favCharacterDescri[0][5]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -165,6 +178,7 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][6]}
                     favCharacter={favCharacter[0][6]}
+                    favCharacterDescri={favCharacterDescri[0][6]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -174,6 +188,7 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][7]}
                     favCharacter={favCharacter[0][7]}
+                    favCharacterDescri={favCharacterDescri[0][7]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -183,6 +198,7 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][8]}
                     favCharacter={favCharacter[0][8]}
+                    favCharacterDescri={favCharacterDescri[0][8]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}
@@ -192,6 +208,7 @@ const Favorites = ({
                   <FavCharacterLine
                     fav={fav[0][9]}
                     favCharacter={favCharacter[0][9]}
+                    favCharacterDescri={favCharacterDescri[0][9]}
                     RemoveFav={RemoveFav}
                     RemoveFavCharacter={RemoveFavCharacter}
                     RemoveFavCharacterDescri={RemoveFavCharacterDescri}

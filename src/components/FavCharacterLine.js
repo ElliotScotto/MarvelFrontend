@@ -17,13 +17,17 @@ export default function FavCharacterLine({
 }) {
   // const navigate = useNavigate();
   //
+  console.log(
+    "FAVCHARACTERLINE : favCharacterDescri ====> ",
+    favCharacterDescri
+  );
   return (
     <div className="favCharacter">
       {/* <div
         className="click charInfo"
         onClick={() => {
           navigate(`/character/${fav}`, {
-            state: { favCharacter: favCharacter },
+            state: { favCharacterFromFavorites: favCharacterDescri },
           });
         }}
       >

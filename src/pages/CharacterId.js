@@ -28,19 +28,32 @@ const CharacterId = ({
   fav,
   addFav,
   addFavCharacter,
+  addFavDescri,
 }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log("CHARACTERID : characterIdDescri ===> ", characterIdDescri);
+  const params = useParams();
+  //
+  const lorem =
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Voluptate, maxime! (NC from API)";
+  //
+  const userToken = Cookies.get("userToken");
+  // const charIdDescription = location.state.characterIdDescri;
+  //
+  //
+
   console.log(
     "CHARACTERID : location.state.characterIdDescri ===> ",
     location.state.characterIdDescri
   );
-  const params = useParams();
+  console.log(
+    "CHARACTERID : location.state.favCharacterFromFavorites ===> ",
+    location.state.favCharacterFromFavorites
+  );
   //
-  const userToken = Cookies.get("userToken");
+
   //
   useEffect(() => {
     const handleStyle = () => {
@@ -69,7 +82,7 @@ const CharacterId = ({
         // console.log(params.characterId); //id de chaque personnage
         setData(response.data);
         setIsLoading(false);
-        console.log(response.data.comics);
+        // console.log(response.data.comics);
       } catch (error) {
         console.log(error.response);
       }
@@ -94,11 +107,10 @@ const CharacterId = ({
             <div className="DescriByID">
               {location.state.characterIdDescri ? (
                 <p>{location.state.characterIdDescri}</p>
+              ) : location.state.favCharacterFromFavorites ? (
+                location.state.favCharacterFromFavorites
               ) : (
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Voluptate, maxime! (NC from API)
-                </p>
+                lorem
               )}
             </div>
             <div></div>
@@ -123,14 +135,22 @@ const CharacterId = ({
               </div>
             </div>
             <div
-              className="addFavFromCharacterById  click"
+              className="addFavFromCharacterById click"
               onClick={() => {
                 userToken ? (
                   fav[0].length < 10 ? (
-                    <>
-                      {addFav(params.characterId, "character")};
-                      {addFavCharacter(data.name)};
-                    </>
+                    location.state.characterIdDescri ? (
+                      <>
+                        {addFav(params.characterId, "character")};
+                        {addFavCharacter(data.name)};
+                        {addFavDescri(location.state.characterIdDescri)}
+                      </>
+                    ) : (
+                      <>
+                        {addFav(params.characterId, "character")};
+                        {addFavCharacter(data.name)};{addFavDescri(lorem)}
+                      </>
+                    )
                   ) : (
                     <>
                       {toast.error(

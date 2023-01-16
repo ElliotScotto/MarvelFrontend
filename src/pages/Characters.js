@@ -62,7 +62,7 @@ const Characters = ({
         );
         setData(response.data);
         setIsLoading(false);
-        console.log(response.data);
+        console.log("CHARACTERS : response.data =====>", response.data);
       } catch (error) {
         console.log(error.response);
       }
